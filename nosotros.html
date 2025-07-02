@@ -8,79 +8,55 @@
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="animations.css">
   <link rel="stylesheet" href="nosotros.css">
+  <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body class="pagina-nosotros"> <!-- Clase añadida aquí -->
 
-  <header class="main-header">
+<header class="main-header">
     <div class="header-container">
-      <!-- Logo -->
-      <div class="logo">
-        <a href="">
-          <img src="imagenes/logo.png" alt="Logo de la Iglesia">
-        </a>
-      </div>
-      <div class="imagenTrigo">
-        <img src="imagenes/trigo.png" alt="">
-      </div>
-      <div class="portada-header">
-        <div class="h3">
-          <h3>MINISTERIO APOSTÓLICO Y PROFÉTICO</h3>
+        <!-- Logo a la izquierda -->
+        <div class="logo">
+            <a href="">
+                <img src="imagenes/logo.webp" alt="Logo de la Iglesia">
+            </a>
         </div>
-        <div class="h2">
-          <h2>VISIÓN DE FAMILIA</h2>
+        
+        <!-- Título central (solo visible con scroll) -->
+        <div class="header-title"><h2>Visión de Familia</h2></div>
+        
+        <!-- Menú a la derecha -->
+        <div class="portada-header">
+            <div class="links">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="main.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="" id="ministerios-link">Ministerios</a>
+                            <div class="dropdown-content" id="dropdown-content">
+                                <a href="#">Adoración</a>
+                                <a href="#">Amor y Misericordia</a>
+                                <a href="#">Diseño y Ambiente</a>
+                                <a href="#">Danza</a>
+                                <a href="#">Intercesión</a>
+                                <a href="#">Operaciones</a>
+                                <a href="#">Protocolo</a>
+                                <a href="#">Registro y Seguimiento</a>
+                                <a href="#">UMAV</a>
+                                <a href="#">VDF KIDS</a>
+                                <a href="#">Escuela de la Visión</a>
+                                <a href="#">Evangelismo</a>
+                            </div>
+                        </li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div class="links">
-          <nav class="main-nav">
-            <ul>
-              <li><a href="main.php">Inicio</a></li>
-              <li><a href="nosotros.php">Nosotros</a></li>
-              <li><a href="" id="ministerios-link">Ministerios</a>
-                <div class="dropdown-content" id="dropdown-content">
-                  <a href="#">Adoración</a>
-                  <a href="#">Amor y Misericordia</a>
-                  <a href="#">Diseño y Ambiente</a>
-                  <a href="#">Danza</a>
-                  <a href="#">Intercesión</a>
-                  <a href="#">Operaciones</a>
-                  <a href="#">Protocolo</a>
-                  <a href="#">Registro y Seguimiento</a>
-                  <a href="#">UMAV</a>
-                  <a href="#">VDF KIDS</a>
-                  <a href="#">Escuela de la Visión</a>
-                  <a href="#">Evangelismo</a>
-                </div>
-              </li>
-              <li><a href="blog.php">Blog</a></li>
-              <li><a href="contacto.php">Contacto</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-
-      <!-- Botón de menú móvil (comentado)
-    <button class="menu-toggle" aria-label="Abrir menú">
-      <span class="hamburger"></span>
-      <span class="hamburger"></span>
-      <span class="hamburger"></span>
-    </button>
-
-      Menú móvil (oculto por defecto) 
-    <nav class="mobile-nav">
-      <ul>
-        <li><a href="main.php">Inicio</a></li>
-        <li><a href="nosotros.php">Nosotros</a></li>
-        <li><a href="#">Ministerios</a></li>
-        <li><a href="#">Eventos</a></li>
-        <li><a href="#">Contacto</a></li>
-        <li><a href="#">Donaciones</a></li>
-      </ul>
-    </nav>
-    -->
     </div>
-  </header>
-
+</header>
   <div class="redes">
     <a href="https://www.facebook.com/share/16Ua86KBUe/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
     <a href="https://www.instagram.com/viisiondefamilia?igsh=MWIxNzZkZW83cjllaw==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -108,8 +84,8 @@
         </p>
       </div>
       <div class="fotos">
-        <img style="border-radius: 20px 0 0 20px;" src="imagenes/NOSOTROS.jpg" alt="Foto 1">
-        <img style="border-radius: 0 20px 20px 0;" src="imagenes/pastor1.jpg" alt="Foto 2">
+        <img style="border-radius: 20px 0 0 20px;" src="imagenes/NOSOTROS.webp" alt="Foto 1">
+        <img style="border-radius: 0 20px 20px 0;" src="imagenes/pastor1.webp" alt="Foto 2">
       </div>
     </section>
     <div class="titulo-fundamentos">
@@ -117,22 +93,22 @@
     </div>
     <div class="fundamentos-tarjetas">
       <div class="fundamentos-cards">
-        <img src="imagenes/liberacion.png" alt="Icono de Liberación" class="doctrina-icon">
+        <img src="imagenes/liberacion.webp" alt="Icono de Liberación" class="doctrina-icon">
         <h3>Liberación</h3>
         <span>Juan 8:36</span>
       </div>
       <div class="fundamentos-cards">
-        <img src="imagenes/restauracion.png" alt="Icono de Restauración" class="doctrina-icon">
+        <img src="imagenes/restauracion.webp" alt="Icono de Restauración" class="doctrina-icon">
         <h3>Restauración</h3>
         <span>Eclesiastés 3:15</span>
       </div>
       <div class="fundamentos-cards">
-        <img src="imagenes/intersecion.png" alt="Icono de Intercesión" class="doctrina-icon">
+        <img src="imagenes/intersecion.webp" alt="Icono de Intercesión" class="doctrina-icon">
         <h3>Intercesión</h3>
         <span>1 Tesalonisenses 1:2</span>
       </div>
       <div class="fundamentos-cards">
-        <img src="imagenes/adoracion.png" alt="Icono de Adoración" class="doctrina-icon">
+        <img src="imagenes/adoracion.webp" alt="Icono de Adoración" class="doctrina-icon">
         <h3>Adoración</h3>
         <span>Juan 4:23-24</span>
       </div>
@@ -141,7 +117,7 @@
     <section class="mision-vision">
       <div class="mision-vision-contenedor">
         <div class="mision">
-          <img src="imagenes/logo-mision.png" alt="Icono de Misión" class="icono-mision">
+          <img src="imagenes/logo-mision.webp" alt="Icono de Misión" class="icono-mision">
           <h2 style="color: #761727;">Misión</h2>
           <p>
             Facilitar al creyente el descubrimiento, desarrollo y fortalecimiento de sus dones y talentos en Dios,
@@ -150,7 +126,7 @@
 
         </div>
         <div class="vision">
-          <img src="imagenes/logo-vision.png" alt="Icono de Visión" class="icono-vision">
+          <img src="imagenes/logo-vision.webp" alt="Icono de Visión" class="icono-vision">
           <h2 style="color: #761727;">Visión</h2>
           <p>Que cada persona ganada para el reino de Dios no solo reconozca su amor,
             sino que también aprenda a cultivar una relación profunda con Él.
@@ -167,20 +143,20 @@
       <div class="bloque-fundadores">
 
         <div class="tarjeta-fundador">
-          <img src="imagenes/perfil_pastor.jpg" alt="Apóstol Juan Mata" class="imagen-fundador">
+          <img src="imagenes/perfil_pastor.webp" alt="Apóstol Juan Mata" class="imagen-fundador">
           <h3 class="nombre-fundador">Apóstol Juan Mata</h3>
           <p class="texto-fundador">
             El Apóstol Juan Carlo Mata nació el 28 de mayo de 1975, y desde una edad temprana mostró un profundo interés por el conocimiento y el servicio a los demás. Se graduó como Licenciado en Administración y Licenciado en Contaduría Pública, lo que le permitió desarrollar habilidades sólidas en el ámbito empresarial y financiero. Además, obtuvo un postgrado en Gerencia Empresarial y una Maestría en Docencia Universitaria, consolidando su compromiso con la educación y el desarrollo profesional. </p>
-          <img src="imagenes/pastor_ministrando.jpg" alt="Foto Apóstol" class="imagen-fundador2">
+          <img src="imagenes/pastor_ministrando.webp" alt="Foto Apóstol" class="imagen-fundador2">
           <p class="frase-fundador">"Servir es el camino al liderazgo eterno"</p>
         </div>
 
         <div class="tarjeta-fundador">
-          <img src="imagenes/profeta_perfil.jpg" alt="Profeta Yenny de Mata" class="imagen-fundador">
+          <img src="imagenes/profeta_perfil.webp" alt="Profeta Yenny de Mata" class="imagen-fundador">
           <h3 class="nombre-fundador">Profeta Yenny de Mata</h3>
           <p class="texto-fundador">
             La Profeta Yenny de Mata, nacida el 1 de enero de 1980, es una sierva de Dios apasionada y ungida, cuyo ministerio ha impactado vidas por toda la nación y más allá. Antes de abrazar plenamente su vocación ministerial, la Profeta Yenny se graduó como Licenciada en Contaduría Pública. Esta formación profesional le brindó una base sólida en principios de organización y administración, habilidades que hoy en día son de gran valor en la edificación del cuerpo de Cristo. </p>
-          <img src="imagenes/profeta_ministrando.jpg" alt="Profeta Yenny de Mata - Foto adicional" class="imagen-fundador2">
+          <img src="imagenes/profeta_ministrando.webp" alt="Profeta Yenny de Mata - Foto adicional" class="imagen-fundador2">
           <p class="frase-fundador">"Con fe y obediencia, el propósito se manifiesta"</p>
         </div>
 
@@ -198,7 +174,7 @@
 
           <div class="carousel-item active">
             <div class="pastor-image">
-              <img src="imagenes/Pastores Antonio y Romelia De Colmenares.jpg" alt="Pastor Juan Pérez">
+              <img src="imagenes/Pastores Antonio y Romelia De Colmenares.webp" alt="Pastor Juan Pérez" > 
             </div>
             <h3 class="pastor-name">Pastores Antonio y Romelia De Colmenares</h3>
             <p class="pastor-role">Danza<br>Escuela de la Visión</p>
@@ -206,7 +182,7 @@
 
           <div class="carousel-item">
             <div class="pastor-image">
-              <img src="imagenes/Pastores Carlos y Jessica De Aranguren.jpg" alt="Pastora María García">
+              <img src="imagenes/Pastores Carlos y Jessica De Aranguren.webp" alt="Pastora María García">
             </div>
             <h3 class="pastor-name">Pastores Carlos y Jessica De Aranguren</h3>
             <p class="pastor-role">Operaciones<br>Adoración<br>Amor y Misericordia</p>
@@ -214,7 +190,7 @@
 
           <div class="carousel-item">
             <div class="pastor-image">
-              <img src="imagenes/Pastores Enrique y Yoleima De Ortiz.jpg" alt="Diácono Carlos Ruiz">
+              <img src="imagenes/Pastores Enrique y Yoleima De Ortiz.webp" alt="Diácono Carlos Ruiz">
             </div>
             <h3 class="pastor-name">Pastores Enrique y Yoleima De Ortiz</h3>
             <p class="pastor-role">Registro y Seguimiento<br>Intercesión</p>
@@ -222,7 +198,7 @@
 
           <div class="carousel-item">
             <div class="pastor-image">
-              <img src="imagenes/Pastores Israel y Cleorelys De Laborda.jpg" alt="Líder Ana Rodríguez">
+              <img src="imagenes/Pastores Israel y Cleorelys De Laborda.webp" alt="Líder Ana Rodríguez">
             </div>
             <h3 class="pastor-name">Pastores Israel y Cleorelys De Laborda</h3>
             <p class="pastor-role">VDF Kids<br>Líderes Visionarios</p>
@@ -230,7 +206,7 @@
 
           <div class="carousel-item">
             <div class="pastor-image">
-              <img src="imagenes/Pastores Samuel y Yennifer De Pérez.jpg" alt="Coordinador Luis Sánchez">
+              <img src="imagenes/Pastores Samuel y Yennifer De Pérez.webp" alt="Coordinador Luis Sánchez">
             </div>
             <h3 class="pastor-name">Pastores Samuel y Yennifer De Pérez</h3>
             <p class="pastor-role">Protocolo<br>Diseño y Ambiente<br>UMAV</p> 
@@ -244,52 +220,60 @@
     </section>
 
   </main>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-info">
 
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-info">
-        <div class="footer-column">
-          <div class="logo">
-            <a href="main.php">
-              <img src="imagenes/logo.png" alt="Logo de la Iglesia">
-            </a>
-          </div>
-        </div>
-        <div class="footer-column">
+      <!-- Columna 1: Logo -->
+      <div class="footer-column footer-logo">
+        <img src="imagenes/logo.webp" alt="Logo de la Iglesia" />
+      </div>
+
+      <!-- Columna 2: Ubicación -->
+      <div class="footer-column">
+        <div class="ubicacion-texto">
+          <h4>UBICACIÓN</h4>
           <address>
-            <h4>UBICACIÓN</h4>
             Av. 23 de Enero con Av. Las Samanes<br>
             Edificio Autocentro<br>
             Barinas, Sector La Federación<br>
             Barinas, Venezuela
           </address>
         </div>
-        <div class="footer-column">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.123456789!2d-70.2251667!3d8.6229444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzcnMjIuNiJOIDcwwrAxMyczMC42Ilc!5e0!3m2!1ses!2sve!4v1620000000000!5m2!1ses!2sve"
-            width="300"
-            height="auto"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            aria-label="Mapa de ubicación de la iglesia">
-          </iframe>
-          <a href="https://www.google.com/maps/place/8%C2%B037'22.6%22N+70%C2%B013'30.6%22W/@8.6229444,-70.2251667,17z/data=!3m1!4b1!4m4!3m3!8m2!3d8.6229444!4d-70.2251667"
-            target="_blank"
-            class="mapa-boton">
-            <i class="fas fa-directions"></i> Abrir en Google Maps
-          </a>
-        </div>
-        <div class="footer-column">
-          <h4>DONACIONES</h4>
-          <p>Dios provee tanto la semilla para sembrar como el pan para comer</p>
-        </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2023 Visión de Familia. Todos los derechos reservados.</p>
+
+      <!-- Columna 3: Mapa + botón -->
+      <div class="footer-column">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.123456789!2d-70.2251667!3d8.6229444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzcnMjIuNiJOIDcwwrAxMyczMC42Ilc!5e0!3m2!1ses!2sve!4v1620000000000!5m2!1ses!2sve"
+          width="300"
+          height="auto"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          aria-label="Mapa de ubicación de la iglesia">
+        </iframe>
+        <a href="https://www.google.com/maps/place/8%C2%B037'22.6%22N+70%C2%B013'30.6%22W/@8.6229444,-70.2251667,17z/data=!3m1!4b1!4m4!3m3!8m2!3d8.6229444!4d-70.2251667"
+          target="_blank"
+          class="mapa-boton">
+          <i class="fas fa-directions"></i> Abrir en Google Maps
+        </a>
       </div>
+
+      <!-- Columna 4: Donaciones -->
+      <div class="footer-column">
+        <h4>DONACIONES</h4>
+        <p>Dios provee tanto la semilla para sembrar como el pan para comer</p>
+      </div>
+
     </div>
-  </footer>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Visión de Familia. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
   <script src="main.js"></script>
   <script src="nosotros.js"></script>
 
