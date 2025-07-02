@@ -1,0 +1,689 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Playfair+Display&display=swap');
+
+/* Estilos específicos para la página Nosotros */
+.pagina-nosotros {
+  background-color: #F9F5F0;
+  color: #2d2d30;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.pagina-nosotros .contenido-principal {
+  background: transparent;
+  padding: 2rem 0;
+}
+
+.pagina-nosotros .biografia {
+  display: flex;
+}
+
+.biografia-texto {
+  width: 50%;
+  text-align: justify;
+  padding-right: 30px;
+}
+
+.fotos {
+  display: flex;
+
+}
+
+.pagina-nosotros .biografia img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* Títulos*/
+.biografia h2,
+.fundamentos h2,
+.fundadores h2 {
+  color: #761727;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+}
+
+/* Secciones */
+.pagina-nosotros .biografia {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mision-vision {
+  background-color: #F9F5F0;
+  /* Color de fondo suave */
+  padding: 2rem 1rem;
+  /* Espaciado interior */
+  text-align: center;
+  /* Centra el texto */
+}
+
+.mision-vision-contenedor {
+  display: flex;
+  justify-content: space-around;
+  /* Espacia las secciones de misión y visión */
+  max-width: 1200px;
+  /* Ancho máximo */
+  margin: 0 auto;
+  /* Centra el contenedor */
+}
+
+.mision,
+.vision {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.icono-mision,
+.icono-vision {
+  width: 60px;
+  /* Tamaño del ícono */
+  height: auto;
+  /* Mantiene la proporción */
+  margin: 0 auto 1rem;
+  /* Centra el ícono y espacio debajo */
+}
+
+h2 {
+  margin-bottom: 1rem;
+  /* Espacio debajo del título */
+  text-align: center;
+  /* Centra el título */
+}
+
+p {
+  line-height: 1.6;
+  /* Altura de línea para mejor legibilidad */
+  color: #333;
+  /* Color del texto */
+  text-align: justify;
+  /* Justifica el texto */
+}
+
+.hovered {
+  transform: scale(1.05);
+  /* Aumenta el tamaño del contenedor */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  /* Aumenta la sombra */
+}
+
+
+
+.titulo-fundamentos {
+  text-align: center;
+  /* Centra el título */
+  margin-bottom: 1rem;
+  /* Espacio debajo del título */
+  position: relative;
+  /* Necesario para posicionar el pseudo-elemento */
+}
+
+.titulo-fundamentos::after {
+  content: '';
+  display: block;
+  width: 100px;
+  /* Ajusta el ancho según desees */
+  height: 4px;
+  /* Grosor de la línea */
+  background: linear-gradient(to right, rgba(255, 0, 0, 0) 0%, rgb(94, 21, 32) 100%);
+  /* Degradado */
+  margin: 0 auto;
+  /* Centra la línea */
+  border-radius: 2px;
+  /* Esquinas redondeadas (opcional) */
+  position: absolute;
+  /* Posiciona la línea en relación al contenedor */
+  bottom: -10px;
+  /* Ajusta la distancia desde el título */
+  left: 50%;
+  /* Posiciona al centro */
+  transform: translateX(-50%);
+  /* Centra la línea */
+}
+
+/* ESTILOS PARA LAS TARJETAS DE FUNDAMENTOS */
+.fundamentos-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.fundamentos-cards {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(118, 23, 39, 0.1);
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 2px solid #F8CF49;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.fundamentos-cards:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(118, 23, 39, 0.15);
+  border-color: #761727;
+}
+
+.doctrina-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  transition: transform 0.4s ease;
+}
+
+.fundamentos-cards:hover .doctrina-icon {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.fundamentos-cards h3 {
+  color: #761727;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.fundamentos-cards span {
+  color: #666;
+  font-style: italic;
+  font-size: 0.95rem;
+  display: block;
+  margin-top: auto;
+}
+
+/* Efecto de iluminación al pasar el mouse */
+.fundamentos-cards::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(248, 207, 73, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+.fundamentos-cards:hover::after {
+  opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .fundamentos-tarjetas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .fundamentos-tarjetas {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Contenedor principal de la sección fundadores */
+.bloque-fundadores {
+  display: flex;
+  flex-direction: row;
+  /* Esto ya está correcto */
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Tarjetas individuales - MODIFICADO */
+.tarjeta-fundador {
+  background: #761727;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: calc(50% - 2rem);
+  /* Ajuste clave: 50% del contenedor menos el gap */
+  min-width: 280px;
+  max-width: 500px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  flex: 1;
+  /* Esto ayuda a que ambas tarjetas ocupen igual espacio */
+}
+
+/* RESPONSIVE - MODIFICADO */
+@media (max-width: 768px) {
+  .bloque-fundadores {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarjeta-fundador {
+    width: 90%;
+    /* En móvil ocupa casi todo el ancho */
+    margin-bottom: 2rem;
+    /* Espacio entre tarjetas en móvil */
+  }
+
+  .tarjeta-fundador:last-child {
+    margin-bottom: 0;
+    /* Elimina el margen inferior de la última tarjeta */
+  }
+}
+
+.tarjeta-fundador:hover {
+  transform: scale(1.02);
+}
+
+/* Imagen circular */
+.imagen-fundador {
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 70%;
+  margin-bottom: 0rem;
+  border: 5px solid #ffcc00;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+}
+
+/* Títulos y texto */
+.nombre-fundador {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: #F8CF49;
+  margin-bottom: 0.5rem;
+}
+
+.texto-fundador {
+  line-height: 1.6;
+  text-align: justify;
+  color: white;
+}
+
+.frase-fundador {
+  font-style: italic;
+  color: #F8CF49;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.titulo-fundadores {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  color: #761727;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.titulo-fundadores::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, rgba(255, 0, 0, 0) 0%, #761727 50%, rgba(255, 0, 0, 0) 100%);
+  margin: 0 auto;
+  border-radius: 2px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Estilo para la nueva imagen rectangular */
+.imagen-fundador2 {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 30px;
+  margin: 1rem auto;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0f0f0;
+}
+
+/* Ajustes responsive para la nueva imagen */
+@media (max-width: 768px) {
+  .imagen-fundador2 {
+    max-width: 100%;
+    /* En móviles ocupa casi todo el ancho */
+    margin: 0rem 0;
+    /* Ajuste de márgenes en móvil */
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bloque-fundadores {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarjeta-fundador {
+    width: 90%;
+  }
+}
+
+/* Estilos para la sección completa del Equipo Pastoral */
+.pastoral-team-section {
+  width: 100%;
+  margin: 50px auto;
+  background-color: #333;
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 20px;
+  /* Space below the title and line */
+}
+
+.section-title {
+  font-size: 3em;
+  color: #f0f0f0;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.title-underline {
+  position: relative;
+  width: 80px;
+  height: 4px;
+  background-color: #ffcc00;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.title-underline::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+}
+
+
+
+/* Estilos para la sección completa del Equipo Pastoral */
+.pastoral-team-section {
+  width: 100%;
+  max-width: 1400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #333;
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  /* No es necesario position: relative; aquí a menos que quieras posicionar algo absoluto a esta sección */
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 3em;
+  color: #f0f0f0;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.title-underline {
+  position: relative;
+  width: 80px;
+  height: 4px;
+  background-color: #ffcc00;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.title-underline::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+}
+
+/* --- Nuevo contenedor para el carrusel y las flechas --- */
+.carousel-wrapper {
+  position: relative;
+  /* ¡IMPORTANTE! Para que los botones se posicionen respecto a este */
+  width: 90%;
+  /* Ancho que contendrá tanto el carrusel como las flechas */
+  max-width: 1000px;
+  /* Max width para el wrapper */
+  margin-top: 20px;
+  padding: 0 60px;
+  /* Deja espacio a los lados para las flechas dentro del wrapper */
+  box-sizing: border-box;
+  /* overflow: visible; si los botones sobresalen mucho del wrapper */
+}
+
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  /* Ocupa el 100% del ancho del .carousel-wrapper */
+  max-width: none;
+  /* Resetear max-width para que sea 100% del padre */
+  overflow: hidden;
+  /* ¡VUELVE A HIDDEN para cortar las tarjetas! */
+  padding: 40px 0;
+  /* Padding interno para el contenido de las tarjetas */
+  box-sizing: border-box;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 380px;
+  background-color: #2a2a2a;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 0 20px;
+  /* Espacio entre tarjetas */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  color: #f0f0f0;
+  text-align: center;
+  min-height: 500px;
+  opacity: 0.5;
+  transform: scale(0.85);
+  transition: all 0.5s ease-in-out;
+  box-sizing: border-box;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  transform: scale(1);
+  background-color: #3b3b3b;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+.pastor-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 5px solid #ffcc00;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pastor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: auto; /* o simplemente quita esta propiedad */
+}
+
+
+.pastor-name {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.pastor-role {
+  font-size: 1.1em;
+  color: #ffcc00;
+  margin-bottom: 15px;
+  font-style: italic;
+  text-align: center;
+}
+
+.pastor-description {
+  font-size: 0.95em;
+  color: #ccc;
+  line-height: 1.5;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* Navigation Arrows (ahora posicionados con respecto al .carousel-wrapper) */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 1.8em;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-nav.prev {
+  left: 0;
+  /* Ahora quedan en el borde del .carousel-wrapper */
+}
+
+.carousel-nav.next {
+  right: 0;
+  /* Ahora quedan en el borde del .carousel-wrapper */
+}
+
+.carousel-nav:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2em;
+  }
+
+  .carousel-wrapper {
+    padding: 0 40px;
+    /* Reduce el padding del wrapper en pantallas medianas */
+  }
+
+  .carousel-item {
+    width: 220px;
+    margin: 0 10px;
+    padding: 20px;
+  }
+
+  .pastor-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .pastor-name {
+    font-size: 1.5em;
+  }
+
+  .pastor-role {
+    font-size: 1em;
+  }
+
+  .carousel-nav {
+    padding: 8px 12px;
+    font-size: 1.2em;
+    left: 0px;
+    right: 0px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8em;
+  }
+
+  .carousel-wrapper {
+    padding: 0 10px;
+    /* Reduce aún más el padding en móviles */
+  }
+
+  .carousel-item {
+    width: 85vw;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .carousel-inner {
+    justify-content: flex-start;
+    transform: translateX(0) !important;
+  }
+
+  .carousel-nav {
+    display: none;
+    /* O puedes hacerlos visibles y ajustarlos */
+  }
+}
