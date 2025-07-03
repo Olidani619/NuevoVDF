@@ -48,18 +48,18 @@ document.addEventListener("DOMContentLoaded", () => {
               <i class="fas fa-church"></i> Ministerios <span class="arrow">&#x25BC;</span>
             </a>
             <div class="dropdown-content" id="dropdown-content">
-              <a href="#">Adoración</a>
-              <a href="#">Amor y Misericordia</a>
-              <a href="#">Diseño y Ambiente</a>
-              <a href="#">Danza</a>
-              <a href="#">Intercesión</a>
-              <a href="#">Operaciones</a>
-              <a href="#">Protocolo</a>
-              <a href="#">Registro y Seguimiento</a>
-              <a href="#">UMAV</a>
-              <a href="#">VDF KIDS</a>
-              <a href="#">Escuela de la Visión</a>
-              <a href="#">Evangelismo</a>
+                      <a href="../Alabanza/alabanzayadoracion.html">Adoración</a>
+                      <a href="#">Amor y Misericordia</a>
+                      <a href="../Diseño y Ambiente/index.html">Diseño y Ambiente</a>
+                      <a href="../Danza/index.html">Danza</a>
+                      <a href="../Alabanza/Intersecion.html">Intercesión</a>
+                      <a href="#">Operaciones</a>
+                      <a href="#">Protocolo</a>
+                      <a href="../registro_seguimiento/index.php">Registro y Seguimiento</a>
+                      <a href="#">UMAV</a>
+                      <a href="#">VDF KIDS</a>
+                      <a href="../Escuela de la Vision/index.html">Escuela de la Visión</a>
+                      <a href="#">Evangelismo</a>
             </div>
           </li>
           
