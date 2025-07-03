@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Alabanza y Adoración</title>
+        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="alabanzaYAdoracion.css" />
+        <link rel="stylesheet" href="animations.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <header class="main-header">
+            <div class="header-container">
+                <!-- Logo a la izquierda -->
+                <div class="logo">
+                    <a href="">
+                        <img
+                            src="../imagenes/logo.webp"
+                            alt="Logo de la Iglesia"
+                        />
+                    </a>
+                </div>
+
+                <!-- Título central (solo visible con scroll) -->
+                <div class="header-title"><h2>Visión de Familia</h2></div>
+
+                <!-- Menú a la derecha -->
+                <div class="portada-header">
+                    <div class="links">
+                        <nav class="main-nav">
+                            <ul>
+                                <li><a href="../main.html">Inicio</a></li>
+                                <li><a href="../nosotros.html">Nosotros</a></li>
+                                <li>
+                                    <a href="" id="ministerios-link"
+                                        >Ministerios</a
+                                    >
+                                    <div
+                                        class="dropdown-content"
+                                        id="dropdown-content"
+                                    >
+                                        <a href="#">Adoración</a>
+                                        <a href="#">Amor y Misericordia</a>
+                                        <a href="#">Diseño y Ambiente</a>
+                                        <a href="#">Danza</a>
+                                        <a href="intersecion.html"
+                                            >Intercesión</a
+                                        >
+                                        <a href="#">Operaciones</a>
+                                        <a href="#">Protocolo</a>
+                                        <a href="#">Registro y Seguimiento</a>
+                                        <a href="#">UMAV</a>
+                                        <a href="#">VDF KIDS</a>
+                                        <a href="#">Escuela de la Visión</a>
+                                        <a href="#">Evangelismo</a>
+                                    </div>
+                                </li>
+                                <li><a href="blog.php">Blog</a></li>
+                                <li><a href="contacto.php">Contacto</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="burger-menu" id="burger_menu">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+                <div class="bar-menu-movil">
+                    <div class="slide-menu" id="slide_menu">
+                        <nav class="bar-nav">
+                            <ul>
+                                <li><a href="../main.html">Inicio</a></li>
+                                <li>
+                                    <a href="../nosotros.html">Nosotros</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="" id="ministerios-link"
+                                        >Ministerios</a
+                                    >
+                                    <div
+                                        class="dropdown-content movil"
+                                        id="dropdown-content"
+                                    >
+                                        <a href="#">Adoración</a>
+                                        <a href="#">Amor y Misericordia</a>
+                                        <a href="#">Diseño y Ambiente</a>
+                                        <a href="#">Danza</a>
+                                        <a href="intersecion.html"
+                                            >Intercesión</a
+                                        >
+                                        <a href="#">Operaciones</a>
+                                        <a href="#">Protocolo</a>
+                                        <a href="#">Registro y Seguimiento</a>
+                                        <a href="#">UMAV</a>
+                                        <a href="#">VDF KIDS</a>
+                                        <a href="#">Escuela de la Visión</a>
+                                        <a href="#">Evangelismo</a>
+                                    </div>
+                                </li>
+                                <li><a href="blog.php">Blog</a></li>
+                                <li><a href="contacto.php">Contacto</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="redes">
+            <a href="https://www.facebook.com/share/16Ua86KBUe/" target="_blank"
+                ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a
+                href="https://www.instagram.com/viisiondefamilia?igsh=MWIxNzZkZW83cjllaw=="
+                target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href=""><i class="fa-brands fa-youtube" target="_blank"></i></a>
+            <a href="https://wa.me/584145064924" target="_blank"
+                ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+        </div>
+        <div class="volverInicio">
+            <button onclick="volverInicio()">⬆</button>
+        </div>
+        <!-- Portada hero con carrusel de imágenes -->
+        <section class="hero-portada">
+            <div class="hero-slideshow">
+                <div
+                    class="slide active"
+                    style="background-image: url('imagenesAYA/AyAP.webp')"
+                ></div>
+            </div>
+
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-titulo">Alabanza y Adoración</h1>
+            </div>
+        </section>
+        <div class="secciones"></div>
+        <!-- Sección Quiénes Somos con diseño moderno -->
+        <section class="quienes-somos" id="quienes-somos">
+            <div class="texto-destacado">
+                <p class="hero-subtitulo">
+                    El ministerio de Alabanza y Adoración es un equipo de
+                    personas que fluyen en los dones del Espíritu Santo a través
+                    de la música, buscando ser adoradores idóneos y apasionados.
+                    Su enfoque principal es exaltar el nombre de Jesucristo,
+                    guiados por la Palabra de Dios, y conducir a la congregación
+                    hacia la presencia del Señor, desarrollando una adoración en
+                    espíritu y en verdad.
+                </p>
+                <p class="hero-subtitulo">­</p>
+                <p class="hero-subtitulo">
+                    Como objetivo es consolidarnos como un ministerio equipado
+                    tanto espiritual como musicalmente, priorizando el
+                    crecimiento personal y en equipo con Cristo. A través de la
+                    alabanza y la adoración, buscamos glorificar a Dios y crear
+                    una atmósfera de intimidad y conexión entre el creyente y el
+                    Señor.
+                </p>
+            </div>
+        </section>
+        <section class="objetivos-section">
+            <h2 class="section-title">Nuestros objetivos</h2>
+            <div class="objetivos-grid">
+                <!-- Objetivo 1 -->
+                <div class="objetivo-card">
+                    <div class="objetivo-icon">1</div>
+                    <div class="objetivo-text">
+                        <p>Glorificar a Dios.</p>
+                    </div>
+                </div>
+
+                <!-- Objetivo 2 -->
+                <div class="objetivo-card">
+                    <div class="objetivo-icon">2</div>
+                    <div class="objetivo-text">
+                        <p>
+                            Guiar a la congregación durante la alabanza y la
+                            adoración.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Objetivo 3 -->
+                <div class="objetivo-card">
+                    <div class="objetivo-icon">3</div>
+                    <div class="objetivo-text">
+                        <p>
+                            Evangelizar a través del arte de la música y generar
+                            una atmósfera de liberación y restauración.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal (estructura base) -->
+        </section>
+        <section class="camino-vision">
+            <div class="pasos-container">
+                <!-- Paso 1 -->
+
+                <div class="paso-card">
+                    <img
+                        src="imagenesAYA/Adoracion1.webp"
+                        alt="Proyecto Visionario"
+                    />
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="paso-card">
+                    <img src="imagenesAYA/Adoracion2.webp" alt="Bautismo" />
+                </div>
+                <!-- Paso 3 -->
+                <div class="paso-card">
+                    <img
+                        src="imagenesAYA/Adoracion3.webp"
+                        alt="Escuela de la Visión"
+                    />
+                </div>
+            </div>
+        </section>
+        <section class="doctrina-ministerial">
+            <div class="section-header">
+                <h2 class="section-title">Juan 4:23-24</h2>
+                <div class="doctrina-grid">
+                    <div class="doctrina-grid">
+                        <!-- Item 1 -->
+                        <div class="doctrina-card">
+                            <div class="doctrina-icon"></div>
+                            <p class="doctrina-text">
+                                Pero la hora viene, y ahora es, cuando los
+                                verdaderos adoradores adorarán al Padre en
+                                espíritu y en verdad; porque ciertamente a los
+                                tales el Padre busca que le adoren}
+                            </p>
+                            <p class="bible-verse">[23]</p>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="doctrina-card">
+                            <div class="doctrina-icon"></div>
+                            <p class="doctrina-text">
+                                Dios es espíritu, y los que le adoran deben
+                                adorarle en espíritu y en verdad.
+                            </p>
+                            <p class="bible-verse">[24]</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-cta">
+                    <h3>
+                        ¿Listo para dar el siguiente paso en tu vida espiritual?
+                    </h3>
+                    <a href="#" class="contact-btn">CONTÁCTANOS</a>
+                </div>
+                <footer class="site-footer">
+                    <div class="footer-container">
+                        <!-- Sección de llamado a acción -->
+
+                        <!-- Sección de información -->
+                        <div class="footer-info">
+                            <!-- Columna de ubicación -->
+                            <div class="footer-column">
+                                <div class="logoFooter">
+                                    <a href="../main.html">
+                                        <img
+                                            src="../imagenes/logo.webp"
+                                            alt="Logo de la Iglesia"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="footer-column">
+                                <address>
+                                    <h4>UBICACIÓN</h4>
+                                    Av. 23 de Enero con Av. Las Samanes<br />
+                                    Edificio Autocentro<br />
+                                    Barinas, Sector La Federación<br />
+                                    Barinas, Venezuela
+                                </address>
+                            </div>
+                            <div class="footer-column">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.123456789!2d-70.2251667!3d8.6229444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzcnMjIuNiJOIDcwwrAxMyczMC42Ilc!5e0!3m2!1ses!2sve!4v1620000000000!5m2!1ses!2sve"
+                                    width="300"
+                                    height="auto"
+                                    style="border: 0"
+                                    allowfullscreen=""
+                                    loading="lazy"
+                                    aria-label="Mapa de ubicación de la iglesia"
+                                >
+                                </iframe>
+                                <a
+                                    href="https://www.google.com/maps/place/8%C2%B037'22.6%22N+70%C2%B013'30.6%22W/@8.6229444,-70.2251667,17z/data=!3m1!4b1!4m4!3m3!8m2!3d8.6229444!4d-70.2251667"
+                                    target="_blank"
+                                    class="mapa-boton"
+                                >
+                                    <i class="fas fa-directions"></i> Abrir en
+                                    Google Maps
+                                </a>
+                            </div>
+                            <!-- Columna de donaciones -->
+                            <div class="footer-column">
+                                <h4>DONACIONES</h4>
+                                <p>
+                                    Dios provee tanto la semilla para sembrar
+                                    como el pan para come
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Derechos de autor -->
+                        <div class="footer-bottom">
+                            <p>
+                                &copy; 2023 Visión de Familia. Todos los
+                                derechos reservados.
+                            </p>
+                        </div>
+                    </div>
+                </footer>
+                <script src="../main.js"></script>
+            </div>
+        </section>
+        <script src="barMenuMovil.js"></script>
+    </body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Intercesión</title>
+        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="alabanzaYAdoracion.css" />
+        <link rel="stylesheet" href="animations.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <header class="main-header">
+            <div class="header-container">
+                <!-- Logo a la izquierda -->
+                <div class="logo">
+                    <a href="">
+                        <img
+                            src="../imagenes/logo.webp"
+                            alt="Logo de la Iglesia"
+                        />
+                    </a>
+                </div>
+
+                <!-- Título central (solo visible con scroll) -->
+                <div class="header-title"><h2>Visión de Familia</h2></div>
+
+                <!-- Menú a la derecha -->
+                <div class="portada-header">
+                    <div class="links">
+                        <nav class="main-nav">
+                            <ul>
+                                <li><a href="../main.html">Inicio</a></li>
+                                <li><a href="../nosotros.html">Nosotros</a></li>
+                                <li>
+                                    <a href="" id="ministerios-link"
+                                        >Ministerios</a
+                                    >
+                                    <div
+                                        class="dropdown-content"
+                                        id="dropdown-content"
+                                    >
+                                        <a href="alabanzayadoracion.html"
+                                            >Adoración</a
+                                        >
+                                        <a href="#">Amor y Misericordia</a>
+                                        <a href="#">Diseño y Ambiente</a>
+                                        <a href="#">Danza</a>
+                                        <a href="#">Intercesión</a>
+                                        <a href="#">Operaciones</a>
+                                        <a href="#">Protocolo</a>
+                                        <a href="#">Registro y Seguimiento</a>
+                                        <a href="#">UMAV</a>
+                                        <a href="#">VDF KIDS</a>
+                                        <a href="#">Escuela de la Visión</a>
+                                        <a href="#">Evangelismo</a>
+                                    </div>
+                                </li>
+                                <li><a href="blog.php">Blog</a></li>
+                                <li><a href="contacto.php">Contacto</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="burger-menu" id="burger_menu">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+                <div class="bar-menu-movil">
+                    <div class="slide-menu" id="slide_menu">
+                        <nav class="bar-nav">
+                            <ul>
+                                <li><a href="../main.html">Inicio</a></li>
+                                <li>
+                                    <a href="../nosotros.html">Nosotros</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="" id="ministerios-link"
+                                        >Ministerios</a
+                                    >
+                                    <div
+                                        class="dropdown-content movil"
+                                        id="dropdown-content"
+                                    >
+                                        <a href="alabanzayadoracion.html"
+                                            >Adoración</a
+                                        >
+                                        <a href="#">Amor y Misericordia</a>
+                                        <a href="#">Diseño y Ambiente</a>
+                                        <a href="#">Danza</a>
+                                        <a href="#">Intercesión</a>
+                                        <a href="#">Operaciones</a>
+                                        <a href="#">Protocolo</a>
+                                        <a href="#">Registro y Seguimiento</a>
+                                        <a href="#">UMAV</a>
+                                        <a href="#">VDF KIDS</a>
+                                        <a href="#">Escuela de la Visión</a>
+                                        <a href="#">Evangelismo</a>
+                                    </div>
+                                </li>
+                                <li><a href="blog.php">Blog</a></li>
+                                <li><a href="contacto.php">Contacto</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="redes">
+            <a href="https://www.facebook.com/share/16Ua86KBUe/" target="_blank"
+                ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a
+                href="https://www.instagram.com/viisiondefamilia?igsh=MWIxNzZkZW83cjllaw=="
+                target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href=""><i class="fa-brands fa-youtube" target="_blank"></i></a>
+            <a href="https://wa.me/584145064924" target="_blank"
+                ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+        </div>
+        <div class="volverInicio">
+            <button onclick="volverInicio()">⬆</button>
+        </div>
+        <!-- Portada hero con carrusel de imágenes -->
+        <section class="hero-portada">
+            <div class="hero-slideshow">
+                <div
+                    class="slide active"
+                    style="background-image: url('imagenesintercesion/IP.webp')"
+                ></div>
+            </div>
+
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-titulo">Intercesión</h1>
+            </div>
+        </section>
+        <div class="secciones"></div>
+        <!-- Sección Quiénes Somos con diseño moderno -->
+        <section class="quienes-somos" id="quienes-somos">
+            <div class="texto-destacado">
+                <p class="hero-subtitulo">
+                    Un Equipo de hombres y mujeres sumergidos en el Poder de la
+                    Oración y el Fuego de Dios, siempre apercibidos, orando e
+                    intercediendo por la Iglesia y levantando peticiones ante el
+                    trono de Dios. Buscando la intervención divina y siendo
+                    eficaces en la lucha espiritual, antes, durante y después de
+                    cada actividad. Constantemente en Oración por el Cuerpo
+                    Ministerial, Líderes, Servidores de nuestra iglesia y su
+                    Familia, la Congregación, Venezuela y el Mundo.
+                </p>
+            </div>
+
+            <!-- Modal (estructura base) -->
+        </section>
+        <section class="camino-vision">
+            <div class="pasos-container">
+                <!-- Paso 1 -->
+
+                <div class="paso-card">
+                    <img
+                        src="imagenesintercesion/Intercesión1.webp"
+                        alt="Proyecto Visionario"
+                    />
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="paso-card">
+                    <img
+                        src="imagenesintercesion/Intercesión2.webp"
+                        alt="Bautismo"
+                    />
+                </div>
+                <!-- Paso 3 -->
+                <div class="paso-card">
+                    <img
+                        src="imagenesintercesion/Intercesión3.webp"
+                        alt="Escuela de la Visión"
+                    />
+                </div>
+            </div>
+        </section>
+        <section class="doctrina-ministerial">
+            <div class="section-header">
+                <h2 class="section-title">Efesios 6:12</h2>
+                <div class="doctrina-grid">
+                    <!-- Item 1 -->
+                    <div class="doctrina-card">
+                        <div class="doctrina-icon"></div>
+                        <p class="doctrina-text">
+                            Porque nuestra lucha no es contra sangre y carne,
+                            sino contra principados, contra potestades, contra
+                            los poderes de este mundo de tinieblas, contra las
+                            huestes espirituales de maldad en las regiones
+                            celestiales.
+                        </p>
+                        <p class="bible-verse">[12]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-cta">
+            <h3>¿Listo para dar el siguiente paso en tu vida espiritual?</h3>
+            <a href="#" class="contact-btn">CONTÁCTANOS</a>
+        </div>
+        <footer class="site-footer">
+            <div class="footer-container">
+                <!-- Sección de información -->
+                <div class="footer-info">
+                    <!-- Columna de ubicación -->
+                    <div class="footer-column">
+                        <div class="logoFooter">
+                            <a href="../main.html">
+                                <img
+                                    src="../imagenes/logo.webp"
+                                    alt="Logo de la Iglesia"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <address>
+                            <h4>UBICACIÓN</h4>
+                            Av. 23 de Enero con Av. Las Samanes<br />
+                            Edificio Autocentro<br />
+                            Barinas, Sector La Federación<br />
+                            Barinas, Venezuela
+                        </address>
+                    </div>
+                    <div class="footer-column">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.123456789!2d-70.2251667!3d8.6229444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzcnMjIuNiJOIDcwwrAxMyczMC42Ilc!5e0!3m2!1ses!2sve!4v1620000000000!5m2!1ses!2sve"
+                            width="300"
+                            height="auto"
+                            style="border: 0"
+                            allowfullscreen=""
+                            loading="lazy"
+                            aria-label="Mapa de ubicación de la iglesia"
+                        >
+                        </iframe>
+                        <a
+                            href="https://www.google.com/maps/place/8%C2%B037'22.6%22N+70%C2%B013'30.6%22W/@8.6229444,-70.2251667,17z/data=!3m1!4b1!4m4!3m3!8m2!3d8.6229444!4d-70.2251667"
+                            target="_blank"
+                            class="mapa-boton"
+                        >
+                            <i class="fas fa-directions"></i> Abrir en Google
+                            Maps
+                        </a>
+                    </div>
+                    <!-- Columna de donaciones -->
+                    <div class="footer-column">
+                        <h4>DONACIONES</h4>
+                        <p>
+                            Dios provee tanto la semilla para sembrar como el
+                            pan para come
+                        </p>
+                    </div>
+                </div>
+                <!-- Derechos de autor -->
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2023 Visión de Familia. Todos los derechos
+                        reservados.
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <script src="../main.js"></script>
+        <script src="barMenuMovil.js"></script>
+    </body>
+</html>
