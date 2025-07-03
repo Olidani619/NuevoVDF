@@ -174,61 +174,56 @@ body {
     display: block;
 }
 
-/* Redes sociales */
 .redes {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 0.7%;
+  top: 55%;
+  z-index: 100;
+  width: 40px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 2px;
+  justify-content: center;
+  align-items: center;
 }
 
 .redes a {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
+  font-size: 25px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #54162b;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
 }
 
 .redes a:hover {
-    background-color: #f8d347;
-    color: #000;
-    transform: scale(1.1);
+  transform: scale(1.2);
 }
 
-/* Botón volver al inicio */
 .volverInicio {
-    position: fixed;
-    right: 20px;
-    bottom: 90px;
-    z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 0.7%;
+  top: 80%;
+  z-index: 100;
+  width: 40px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1px;
+  justify-content: center;
+  align-items: center;
 }
 
 .volverInicio button {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  all: unset;
+  color: #54162b;
+  font-size: 25px;
+  cursor: pointer;
 }
 
-.volverInicio button:hover {
-    background-color: #f8d347;
-    color: #000;
-    transform: scale(1.1);
-}
 
 /* Hero portada con carrusel */
 .hero-portada {
@@ -491,6 +486,7 @@ body {
 }
 
 .section-header {
+  text-align: center;
   margin-bottom: 40px;
 }
 
@@ -644,6 +640,7 @@ body {
   display: inline-block;
   background-color: #f1c40f;
   color: #2c3e50;
+  text-align: center;
   padding: 10px 18px;
   border-radius: 20px;
   text-decoration: none;
@@ -719,5 +716,943 @@ body {
   .footer-column h4::after {
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+/* SECCIÓN DEPARTAMENTOS - ESTILO VISUAL */
+.departamentos {
+  background-color: #761727; /* Fondo a todo el ancho */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  /* CAMBIO CLAVE AQUÍ: Reduciendo el espacio vertical entre filas */
+  row-gap: 1rem; /* Ajusta este valor para menos espacio vertical */
+  column-gap: 1rem; /* Mantenemos este valor para el espacio horizontal, o lo ajustas si quieres */
+  padding: 3rem 5%;
+  place-items: center;
+}
+
+.departamentos .titulo {
+  grid-column: 1 / -1; /* Ocupa todas las columnas del grid para el título */
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.departamentos .titulo h2 {
+  font-size: 2rem;
+  color: white;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+/* Línea decorativa bajo el título (opcional) */
+.departamentos .titulo h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #ae7dac, #f3dadf);
+}
+
+.depto-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem; /* Este gap es entre la imagen y el texto dentro de cada tarjeta */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: grayscale(15%);
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  width: 100%; 
+}
+
+.depto-img img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: inset 0 0 0 2px white, 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 4px;
+}
+
+.depto-img span {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #2d2d30;
+  opacity: 0.9;
+  padding: 0 0.5rem;
+}
+
+/* Efectos hover */
+.depto-img:hover {
+  transform: scale(1.08) translateY(-8px);
+  filter: grayscale(0%);
+}
+
+.depto-img:hover img {
+  border-color: #ff6b5b;
+  box-shadow: 0 8px 20px rgba(231, 76, 60, 0.3);
+  transform: rotate(2deg);
+}
+
+.depto-img:hover span {
+  color: #e74c3c;
+}
+
+/* Estilos generales */
+.objetivos-section {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem;
+  background-color: #F9F5F0;
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Título de sección */
+
+.camino-vision .section-title,
+.objetivos-section .section-title,
+.doctrina-ministerial .section-title{
+  text-align: center;
+  font-size: 2.2rem;
+  color: #2D2D30;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Grid de objetivos */
+.objetivos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Tarjetas de objetivos */
+.objetivo-card {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 2px 2px 17px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: flex-start;
+  transition: transform 0.3s ease;
+}
+
+.objetivo-card:hover {
+  transform: translateY(-5px);
+}
+
+.objetivo-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #761727;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+}
+
+.objetivo-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #444;
+  margin: 0;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #761727, #fdcdd7);
+}
+
+.doctrina-grid-container {
+  width: 100%;
+  overflow: hidden;
+}
+.doctrina-ministerial {
+  width: 100%;
+  padding: 0.5rem 3rem 1rem;
+  position: relative;
+
+  margin: 0 0;
+  background-color: #F9F5F0;
+}
+/* Grid de doctrinas */
+.doctrina-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: auto;
+  padding: 10px 0;
+}
+.doctrina-card {
+  flex: 1 0 280px;
+  /* Crece, no encoge, base 280px */
+  max-width: 320px;
+  background: white;
+  border-radius: 12px;
+  padding: 0.5rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 4px solid #761727;
+}
+
+.doctrina-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.doctrina-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.6rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.doctrina-card:hover .doctrina-icon {
+  transform: scale(1.1);
+}
+
+.doctrina-card h3 {
+  font-size: 1.3rem;
+  color: #33040C;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.doctrina-text {
+  color: #121212;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.bible-verse {
+  font-style: italic;
+  color: #761727;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  display: block;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  /* Desenfoque suave */
+  z-index: 1000;
+  /*display: flex;*/
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Contenido del modal */
+.modal-content {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.3s ease-out;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Título del modal */
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 1.75rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Descripción */
+.modal-content p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0.8rem 0;
+}
+
+/* Versículo bíblico */
+.modal-content .bible-verse {
+  font-style: italic;
+  color: #007BFF;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+/* Botón de cierre */
+.close-modal {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-modal:hover {
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 1.5rem;
+  }
+
+  .modal-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .modal-content p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 1.2rem;
+    border-radius: 8px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .close-modal {
+    font-size: 24px;
+  }
+}
+
+/* Animación suave de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.proyecto-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #761727;
+}
+
+.contenido-proyecto {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+
+/* Galería de imágenes (izquierda) */
+.galeria {
+  flex: 1.5;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Imagen principal */
+.imagen-principal {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.imagen-principal img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.imagen-principal:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: white;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.imagen-principal:hover .overlay {
+  opacity: 1;
+}
+
+/* Imágenes secundarias */
+.imagenes-secundarias {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.secundaria {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+  height: 150px;
+}
+
+.secundaria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.secundaria:hover img {
+  transform: scale(1.07);
+}
+
+.overlay-sec {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  padding: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.secundaria:hover .overlay-sec {
+  opacity: 1;
+}
+
+/* Texto descriptivo (derecha) */
+.proyecto-texto {
+  flex: 1;
+  min-width: 280px;
+  padding: 1rem;
+  color: white;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.proyecto-texto h2 {
+  font-size: 40px;
+}
+
+.proyecto-texto h3 {
+  font-size: 30px;
+}
+
+.proyecto-texto ul {
+  font-size: 24px;
+  padding-left: 1.5rem;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .contenido-proyecto {
+    flex-direction: column;
+  }
+
+  .galeria,
+  .proyecto-texto {
+    width: 100%;
+  }
+}
+
+
+/* Estilos generales */
+.camino-vision {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #F9F5F0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Título de sección */
+.camino-vision .section-title,
+.objetivos-section .section-title,
+.doctrina-ministerial .section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #2D2D30;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.section-title span {
+  color: #761727;
+  display: block;
+  font-size: 3rem;
+  margin-top: 0.5rem;
+}
+
+/* Contenedor de pasos */
+/* Contenedor principal - ahora horizontal */
+.pasos-container {
+  display: flex;
+  flex-direction: row;
+  /* Cambiado a fila */
+  gap: 1.5rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+
+/* Tarjetas de pasos - diseño horizontal */
+.paso-card {
+  display: flex;
+  flex-direction: column;
+  /* Cambio a columna para mejor disposición */
+  min-width: 280px;
+  /* Ancho mínimo para cada card */
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  scroll-snap-align: start;
+  /* Snap al hacer scroll */
+  position: relative;
+  flex-shrink: 0;
+  /* Evita que se reduzcan */
+}
+
+.paso-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Contenedor de imagen superior */
+.paso-imagen {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.paso-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.paso-card:hover .paso-imagen img {
+  transform: scale(1.1);
+}
+
+/* Contenido de la card */
+.paso-contenido {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+/* Encabezado con número */
+.paso-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.paso-numero {
+  width: 36px;
+  height: 36px;
+  background-color: #761727;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+
+}
+
+.paso-contenido h3 {
+  font-size: 1.25rem;
+  color: #000000;
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+}
+
+/* Eliminamos la flecha entre cards */
+.paso-flecha {
+  display: none;
+}
+
+/* Eliminamos la línea conectadora */
+.paso-card:not(:last-child)::after {
+  display: none;
+}
+
+/* Efecto de borde al hover */
+.paso-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #e74c3c, #f39c12);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.paso-card:hover::before {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pasos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .paso-card {
+    min-width: 85vw;
+    /* Ocupa casi todo el ancho en móviles */
+    margin-right: 1rem;
+  }
+
+  .paso-imagen {
+    height: 150px;
+  }
+
+  .paso-contenido {
+    padding: 1.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pasos-container {
+    flex-wrap: wrap;
+    /* En pantallas grandes, puede envolver */
+    justify-content: center;
+    overflow-x: visible;
+  }
+
+  .paso-card {
+    flex: 0 0 calc(33.333% - 1.5rem);
+    /* 3 columnas */
+    min-width: auto;
+  }
+}
+
+
+.actividades {
+  display: flex; /* Usamos Flexbox para alinear los elementos */
+  flex-wrap: wrap; /* Permitimos que los elementos pasen a la siguiente línea */
+  justify-content: center; /* Centramos los flyers horizontalmente */
+  gap: 30px; /* Espacio entre cada flyer */
+  padding: 20px 20px; /* Espacio interno en la sección */
+  background-color: #F9F5F0; /* Un color de fondo suave para la sección */
+}
+
+/* --- Estilos para cada contenedor de imagen --- */
+.actividadImagen {
+  width: 200px; /* Ancho fijo para cada flyer */
+  border-radius: 12px; /* Bordes redondeados para un look moderno */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que se salga del borde redondeado */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
+  transition: all 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+/* --- Efecto al pasar el cursor por encima (hover) --- */
+.actividadImagen:hover {
+  transform: translateY(-8px); /* Levanta ligeramente el flyer */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Aumenta la sombra para un efecto más notorio */
+}
+
+/* --- Estilos para la imagen dentro del contenedor --- */
+.actividadImagen img {
+  width: 100%; /* La imagen ocupa todo el ancho de su contenedor */
+  height: 100%; /* La altura se ajusta para mantener la proporción */
+  display: block; /* Elimina cualquier espacio extra debajo de la imagen */
+}
+
+/* --- Media Query para pantallas más pequeñas (Móviles) --- */
+@media (max-width: 768px) {
+  .actividadImagen {
+    width: 90%; /* En móviles, el flyer ocupa casi todo el ancho */
+    max-width: 350px; /* Pero con un máximo para no ser demasiado grande */
+  }
+}
+
+.footer-cta {
+  background-color: #761727;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-cta h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.contact-btn {
+  display: inline-block;
+  background-color: #F8CF49;
+  color: rgb(0, 0, 0);
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-btn:hover {
+  background-color: #f0d98d;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+.donate-btn {
+  padding: 10px 20px;
+  background-color: #F8CF49;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 30px; /* <- redondeado */
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.donate-btn:hover {
+  background-color: #f0d98d;
+}
+
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  position: relative;
+}
+
+.close {
+  color: black;
+  font-size: 28px;
+  position: absolute;
+  top: 10px; right: 15px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
+
+.carrusel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carrusel-scroll {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.responsables {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.section {
+  flex: 0 0 calc(100% / 3);
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  margin: 0 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.section img {
+  width: 100%;
+  height: auto; /* más bajo que antes */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.section h2 {
+  font-size: 1.4rem; /* más grande */
+  margin: 0;
+  color: #333;
+  font-family: "Playfair Display", serif;
+}
+
+
+/* Hamburguesa */
+.hamburger {
+  display: none;
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 35px;
+  z-index: 1100;
+}
+
+/* Estilos responsive para menú */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgb(51, 4, 12);
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+  }
+  
+  .main-header.scrolled .header-title {
+    font-size: 1.4rem;
+    opacity: 1;
+  }
+
+  .main-nav.active {
+    display: block;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .main-nav li {
+    margin-left: 0;
+  }
+
+  .has-dropdown .dropdown-content {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+  }
+
+  .has-dropdown.open .dropdown-content {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
   }
 }

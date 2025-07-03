@@ -8,63 +8,73 @@
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="animations.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap"
+    rel="stylesheet">
 </head>
 
 
 <body>
-<header class="main-header">
+  <!--ESTO LO VAN A COPIAR DESDE ACAAAAAAAAA -->
+  <header class="main-header">
     <div class="header-container">
-        <!-- Logo a la izquierda -->
-        <div class="logo">
-            <a href="">
-                <img src="imagenes/logo.webp" alt="Logo de la Iglesia">
-            </a>
+      <!-- Logo a la izquierda -->
+      <div class="logo">
+        <a href="">
+          <img src="imagenes/logo.webp" alt="Logo de la Iglesia">
+        </a>
+      </div>
+
+      <!-- Título central (solo visible con scroll) -->
+      <div class="header-title">
+        <h2>Visión de Familia</h2>
+      </div>
+
+      <button class="hamburger" id="hamburger-btn">&#9776;</button>
+
+      <!-- Menú a la derecha -->
+      <div class="portada-header">
+        <div class="links">
+          <nav class="main-nav">
+            <ul>
+              <li><a href="main.php">Inicio</a></li>
+              <li><a href="nosotros.html">Nosotros</a></li>
+              <li><a href="" id="ministerios-link">Ministerios</a>
+                <div class="dropdown-content" id="dropdown-content">
+                  <a href="#">Adoración</a>
+                  <a href="#">Amor y Misericordia</a>
+                  <a href="#">Diseño y Ambiente</a>
+                  <a href="#">Danza</a>
+                  <a href="#">Intercesión</a>
+                  <a href="#">Operaciones</a>
+                  <a href="#">Protocolo</a>
+                  <a href="#">Registro y Seguimiento</a>
+                  <a href="#">UMAV</a>
+                  <a href="#">VDF KIDS</a>
+                  <a href="#">Escuela de la Visión</a>
+                  <a href="#">Evangelismo</a>
+                </div>
+              </li>
+              <li><a href="https://wa.me/584145064924">Contacto</a></li>
+              <li><a href="#">Registro</a></li>
+            </ul>
+          </nav>
         </div>
-        
-        <!-- Título central (solo visible con scroll) -->
-        <div class="header-title"><h2>Visión de Familia</h2></div>
-        
-        <!-- Menú a la derecha -->
-        <div class="portada-header">
-            <div class="links">
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="main.php">Inicio</a></li>
-                        <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="" id="ministerios-link">Ministerios</a>
-                            <div class="dropdown-content" id="dropdown-content">
-                                <a href="#">Adoración</a>
-                                <a href="#">Amor y Misericordia</a>
-                                <a href="#">Diseño y Ambiente</a>
-                                <a href="#">Danza</a>
-                                <a href="#">Intercesión</a>
-                                <a href="#">Operaciones</a>
-                                <a href="#">Protocolo</a>
-                                <a href="#">Registro y Seguimiento</a>
-                                <a href="#">UMAV</a>
-                                <a href="#">VDF KIDS</a>
-                                <a href="#">Escuela de la Visión</a>
-                                <a href="#">Evangelismo</a>
-                            </div>
-                        </li>
-                        <li><a href="blog.php">Blog</a></li>
-                        <li><a href="contacto.php">Contacto</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+      </div>
     </div>
-</header>
+  </header>
   <div class="redes">
     <a href="https://www.facebook.com/share/16Ua86KBUe/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-    <a href="https://www.instagram.com/viisiondefamilia?igsh=MWIxNzZkZW83cjllaw==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.instagram.com/viisiondefamilia?igsh=MWIxNzZkZW83cjllaw==" target="_blank"><i
+        class="fa-brands fa-instagram"></i></a>
     <a href=""><i class="fa-brands fa-youtube" target="_blank"></i></a>
     <a href="https://wa.me/584145064924" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
   </div>
   <div class="volverInicio">
     <button onclick="volverInicio()">⬆</button>
   </div>
+  <!--HASTA ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->
+
   <!-- Portada hero con carrusel de imágenes -->
   <section class="hero-portada">
     <div class="hero-slideshow">
@@ -76,8 +86,8 @@
 
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <h2 class="hero-subtitulo">MINISTERIO APOSTÓLICO Y PROFÉTICO</h2>
-        <h1 class="hero-titulo-principal">VISIÓN DE FAMILIA</h1>
+      <h2 class="hero-subtitulo">MINISTERIO APOSTÓLICO Y PROFÉTICO</h2>
+      <h1 class="hero-titulo-principal">VISIÓN DE FAMILIA</h1>
     </div>
   </section>
   <div class="secciones">
@@ -113,7 +123,11 @@
       <h2 class="section-title" style="color:#f8cf49;">¿Quiénes somos?</h2>
     </div>
     <div class="texto-destacado">
-      <p>Somos un ministerio apostólico y profético que emerge del corazón de Dios con el propósito de transformar familias, siguiendo el principio establecido por Dios a Abraham en su palabra: "Y en ti serán benditas todas las naciones de la tierra" (Génesis 12:3). Estamos fundamentados en la doctrina de los apóstoles y en la predicación del evangelio, bajo la dirección del Apóstol Juan Carlo Mata y la Profeta Yenny de Mata, junto a un equipo de pastores y líderes comprometidos.</p>
+      <p>Somos un ministerio apostólico y profético que emerge del corazón de Dios con el propósito de transformar
+        familias, siguiendo el principio establecido por Dios a Abraham en su palabra: "Y en ti serán benditas todas las
+        naciones de la tierra" (Génesis 12:3). Estamos fundamentados en la doctrina de los apóstoles y en la predicación
+        del evangelio, bajo la dirección del Apóstol Juan Carlo Mata y la Profeta Yenny de Mata, junto a un equipo de
+        pastores y líderes comprometidos.</p>
     </div>
   </section>
   <div class="carrusel-container">
@@ -121,47 +135,47 @@
       <div class="responsables">
         <div class="section">
           <h2>Adoración</h2>
-          <img src="imagenes/Adoración.jpg" alt="">
+          <img src="imagenes/Adoración.webp" alt="">
         </div>
         <div class="section">
           <h2>Amor y Misericordia</h2>
-          <img src="imagenes/Amor y Misericordia .jpg" alt="">
+          <img src="imagenes/Amor y Misericordia .webp" alt="">
         </div>
         <div class="section">
           <h2>Diseño y ambiente</h2>
-          <img src="imagenes/Diseño y Ambiente.jpg" alt="">
+          <img src="imagenes/Diseño y Ambiente.webp" alt="">
         </div>
         <div class="section">
           <h2>Danza</h2>
-          <img src="imagenes/Danza.jpg" alt="">
+          <img src="imagenes/Danza.webp" alt="">
         </div>
         <div class="section">
           <h2>Intercesión</h2>
-          <img src="imagenes/Intercesión.jpg" alt="">
+          <img src="imagenes/Intercesión.webp" alt="">
         </div>
         <div class="section">
           <h2>Operaciones</h2>
-          <img src="imagenes/Operaciones.jpg" alt="">
+          <img src="imagenes/Operaciones.webp" alt="">
         </div>
         <div class="section">
           <h2>Protocolo</h2>
-          <img src="imagenes/Protocolo.jpg" alt="">
+          <img src="imagenes/Protocolo.webp" alt="">
         </div>
         <div class="section">
           <h2>Registro y seguimiento</h2>
-          <img src="imagenes/Registro y Seguimiento.jpg" alt="">
+          <img src="imagenes/Registro y Seguimiento.webp" alt="">
         </div>
         <div class="section">
           <h2>UMAV</h2>
-          <img src="imagenes/UMAV.jpg" alt="">
+          <img src="imagenes/UMAV.webp" alt="">
         </div>
         <div class="section">
           <h2>VDF KIDS</h2>
-          <img src="imagenes/VDF KIDS.jpg" alt="">
+          <img src="imagenes/VDF KIDS.webp" alt="">
         </div>
         <div class="section">
           <h2>Escuela de la Visión</h2>
-          <img src="imagenes/Escuela de la Visión.jpg" alt="">
+          <img src="imagenes/Escuela de la Visión.webp" alt="">
         </div>
       </div>
     </div>
@@ -203,7 +217,7 @@
           <!-- Item 1 -->
           <div class="doctrina-card">
             <div class="doctrina-icon">
-              <img src="imagenes/biblia.png" alt="Iamgen" width="80" height="80">
+              <img src="imagenes/biblia.webp" alt="Iamgen" width="80" height="80">
             </div>
             <h3>Sagradas Escrituras</h3>
             <p class="doctrina-text">Fundamento de nuestra fe y práctica ministerial</p>
@@ -213,7 +227,7 @@
           <!-- Item 2 -->
           <div class="doctrina-card">
             <div class="doctrina-icon">
-              <img src="imagenes/cruz.png" alt="Imagen" width="80" height="80">
+              <img src="imagenes/cruz.webp" alt="Imagen" width="80" height="80">
             </div>
             <h3>Un solo Dios</h3>
             <p class="doctrina-text">Padre, Hijo y Espíritu Santo</p>
@@ -223,7 +237,7 @@
           <!-- Item 3 -->
           <div class="doctrina-card">
             <div class="doctrina-icon">
-              <img src="imagenes/paz.png" alt="Imagen" width="80" height="80">
+              <img src="imagenes/paz.webp" alt="Imagen" width="80" height="80">
             </div>
             <h3>Evangelio de salvación</h3>
             <p class="doctrina-text">Cristo como único camino de redención</p>
@@ -233,7 +247,7 @@
           <!-- Item 4 -->
           <div class="doctrina-card">
             <div class="doctrina-icon">
-              <img src="imagenes/familia.png" alt="Imagen" width="80" height="80">
+              <img src="imagenes/familia.webp" alt="Imagen" width="80" height="80">
             </div>
             <h3>Familia de la fe</h3>
             <p class="doctrina-text">Hijos de Dios por la fe en Cristo</p>
@@ -243,7 +257,7 @@
           <!-- Item 5 -->
           <div class="doctrina-card">
             <div class="doctrina-icon">
-              <img src="imagenes/unidos.png" alt="Paloma" width="80" height="80">
+              <img src="imagenes/unidos.webp" alt="Paloma" width="80" height="80">
             </div>
             <h3>Cuerpo de Cristo</h3>
             <p class="doctrina-text">Unidad en la diversidad de miembros</p>
@@ -253,7 +267,7 @@
           <!-- Item 6 -->
           <div class="doctrina-card">
             <div class="doctrina-icon">
-              <img src="imagenes/bautizar.png" alt="Imagen" width="80" height="80">
+              <img src="imagenes/bautizar.webp" alt="Imagen" width="80" height="80">
             </div>
             <h3>Un Bautismo</h3>
             <p class="doctrina-text">Nuevo nacimiento en Cristo Jesús</p>
@@ -263,7 +277,7 @@
           <!-- Item 7 -->
           <div class="doctrina-card">
             <div class="doctrina-icon">
-              <img src="imagenes/Cristo.png" alt="Imagen" width="80" height="80">
+              <img src="imagenes/Cristo.webp" alt="Imagen" width="80" height="80">
             </div>
             <h3>Regreso de Cristo</h3>
             <p class="doctrina-text">Volverá para llevar a su iglesia y presentarla ante Dios</p>
@@ -289,26 +303,26 @@
           <!-- Galería a la izquierda -->
           <div class="galeria">
             <div class="imagen-principal">
-              <img src="imagenes/Proyecto2.jpg" alt="Foto principal">
+              <img src="imagenes/Proyecto2.webp" alt="Foto principal">
               <div class="overlay">
                 <h2>Seminarios</h2>
               </div>
             </div>
             <div class="imagenes-secundarias">
               <div class="secundaria">
-                <img src="imagenes/Proyecto3.jpg" alt="Profeta">
+                <img src="imagenes/Proyecto3.webp" alt="Profeta">
                 <div class="overlay-sec">
                   <p>Proyecto Visionario</p>
                 </div>
               </div>
               <div class="secundaria">
-                <img src="imagenes/Proyecto5.jpg" alt="Pastor">
+                <img src="imagenes/Proyecto5.webp" alt="Pastor">
                 <div class="overlay-sec">
                   <p>Evangelismos</p>
                 </div>
               </div>
               <div class="secundaria">
-                <img src="imagenes/Proyecto1.jpg" alt="Canto">
+                <img src="imagenes/Proyecto1.webp" alt="Canto">
                 <div class="overlay-sec">
                   <p>HCM</p>
                 </div>
@@ -347,7 +361,7 @@
         <!-- Paso 1 -->
         <div class="paso-card">
           <div class="paso-imagen">
-            <img src="imagenes/CaminoVision1.jpg" alt="Proyecto Visionario">
+            <img src="imagenes/CaminoVision1.webp" alt="Proyecto Visionario">
           </div>
           <div class="paso-contenido">
             <div class="paso-numero">1</div>
@@ -358,7 +372,7 @@
         <!-- Paso 2 -->
         <div class="paso-card">
           <div class="paso-imagen">
-            <img src="imagenes/CaminoVision2.jpg" alt="Bautismo">
+            <img src="imagenes/CaminoVision2.webp" alt="Bautismo">
           </div>
           <div class="paso-contenido">
             <div class="paso-numero">2</div>
@@ -369,7 +383,7 @@
         <!-- Paso 3 -->
         <div class="paso-card">
           <div class="paso-imagen">
-            <img src="imagenes/Escuela.jpg" alt="Escuela de la Visión">
+            <img src="imagenes/Escuela.webp" alt="Escuela de la Visión">
           </div>
           <div class="paso-contenido">
             <div class="paso-numero">3</div>
@@ -380,7 +394,7 @@
         <!-- Paso 4 -->
         <div class="paso-card">
           <div class="paso-imagen">
-            <img src="imagenes/Servicio.jpg" alt="Servicio en la obra">
+            <img src="imagenes/Servicio.webp" alt="Servicio en la obra">
           </div>
           <div class="paso-contenido">
             <div class="paso-numero">4</div>
@@ -391,7 +405,7 @@
         <!-- Paso 5 -->
         <div class="paso-card">
           <div class="paso-imagen">
-            <img src="imagenes/CaminoVision5.jpg" alt="Liderazgo Ministerial">
+            <img src="imagenes/CaminoVision5.webp" alt="Liderazgo Ministerial">
           </div>
           <div class="paso-contenido">
             <div class="paso-numero">5</div>
@@ -400,21 +414,22 @@
         </div>
       </div>
     </section>
+
     <section class="actividades">
       <div class="actividadImagen">
-        <img src="imagenes/actividad1.jpg" alt="">
+        <img src="imagenes/actividad1.webp" alt="">
       </div>
       <div class="actividadImagen">
-        <img src="imagenes/actividad2.jpg" alt="">
+        <img src="imagenes/actividad2.webp" alt="">
       </div>
       <div class="actividadImagen">
-        <img src="imagenes/actividad3.jpg" alt="">
+        <img src="imagenes/actividad3.webp" alt="">
       </div>
       <div class="actividadImagen">
-        <img src="imagenes/actividad4.jpg" alt="">
+        <img src="imagenes/actividad4.webp" alt="">
       </div>
       <div class="actividadImagen">
-        <img src="imagenes/actividad5.jpg" alt="">
+        <img src="imagenes/actividad5.webp" alt="">
       </div>
     </section>
     <section class="departamentos">
@@ -423,74 +438,74 @@
       </div>
       <a href="url_de_la_pagina_registro" class="depto-img">
         <article>
-          <img src="imagenes_departamentos/logoRegistro.png" alt="Registro y seguimiento">
+          <img src="imagenes_departamentos/logoRegistro.webp" alt="Registro y seguimiento">
         </article>
       </a>
 
       <a href="url_de_la_pagina_medios" class="depto-img">
         <article>
-          <img src="imagenes_departamentos/logoUMAV.png " alt="Unidad de medios audiovisuales">
+          <img src="imagenes_departamentos/logoUMAV.webp" alt="Unidad de medios audiovisuales">
         </article>
       </a>
 
       <a href="url_de_la_pagina_protocolo" class="depto-img">
         <article>
-          <img src="imagenes_departamentos/logoProtocolo.png " alt="Protocolo">
+          <img src="imagenes_departamentos/logoProtocolo.webp " alt="Protocolo">
         </article>
       </a>
 
 
       <a href="url_de_la_pagina_kids" class="depto-img">
         <article>
-          <img src="imagenes_departamentos/logoVdf.png " alt="VDG Kid's">
+          <img src="imagenes_departamentos/logoVdf.webp" alt="VDG Kid's">
         </article>
       </a>
 
       <a href="url_de_la_pagina_danza" class="depto-img">
         <article>
-          <img src="imagenes_departamentos/logoDanza.png " alt="Danza">
+          <img src="imagenes_departamentos/logoDanza.webp" alt="Danza">
         </article>
       </a>
 
       <a href="url_de_la_pagina_visionarios" class="depto-img">
         <article>
-          <img src="imagenes_departamentos/logoLideres.png" alt="Visionarios">
+          <img src="imagenes_departamentos/logoLideres.webp" alt="Visionarios">
         </article>
       </a>
 
       <a href="url_de_la_pagina_adoracion" class="depto-img">
         <article>
-          <img src="imagenes_departamentos/logoAdoracion.png" alt="Adoración">
+          <img src="imagenes_departamentos/logoAdoracion.webp" alt="Adoración">
         </article>
       </a>
 
       <a href="url_de_la_pagina_escuela" class="depto-img">
         <article>
-          <img src="imagenes_departamentos/logoEscuela.png " alt="Escuela de la visión">
+          <img src="imagenes_departamentos/logoEscuela.webp" alt="Escuela de la visión">
         </article>
       </a>
 
       <a href="url_de_la_pagina_diseño_ambiente" class="depto-img">
         <article>
-          <img src="imagenes_departamentos/logoDiseño.png " alt="Diseño y Ambiente">
+          <img src="imagenes_departamentos/logoDiseño.webp" alt="Diseño y Ambiente">
         </article>
       </a>
 
       <a href="url_de_la_pagina_operaciones" class="depto-img">
         <article>
-          <img src="imagenes_departamentos/logoOperaciones.png " alt="Operaciones">
+          <img src="imagenes_departamentos/logoOperaciones.webp" alt="Operaciones">
         </article>
       </a>
 
       <a href="url_de_la_pagina_intercesion" class="depto-img">
         <article>
-          <img src="imagenes_departamentos/logoIntersecion.png " alt="intercesion">
+          <img src="imagenes_departamentos/logoIntersecion.webp" alt="intercesion">
         </article>
       </a>
 
       <a href="url_de_la_pagina_amor_y_misericordia" class="depto-img">
         <article>
-          <img src="imagenes_departamentos/logoAmor.png " alt="amor y misericordia">
+          <img src="imagenes_departamentos/logoAmor.webp" alt="amor y misericordia">
         </article>
       </a>
 
@@ -500,61 +515,72 @@
       <a href="#" class="contact-btn">CONTÁCTANOS</a>
     </div>
 
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-info">
 
-      <!-- Columna 1: Logo -->
-      <div class="footer-column footer-logo">
-        <img src="imagenes/logo.webp" alt="Logo de la Iglesia" />
-      </div>
+    <!--ESTO LO VAN A COPIAR DESDE ACAAAAAAAAA -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-info">
 
-      <!-- Columna 2: Ubicación -->
-      <div class="footer-column">
-        <div class="ubicacion-texto">
-          <h4>UBICACIÓN</h4>
-          <address>
-            Av. 23 de Enero con Av. Las Samanes<br>
-            Edificio Autocentro<br>
-            Barinas, Sector La Federación<br>
-            Barinas, Venezuela
-          </address>
+          <!-- Columna 1: Logo -->
+          <div class="footer-column footer-logo">
+            <img src="imagenes/logo.webp" alt="Logo de la Iglesia" />
+          </div>
+
+          <!-- Columna 2: Ubicación -->
+          <div class="footer-column">
+            <div class="ubicacion-texto">
+              <h4>UBICACIÓN</h4>
+              <address>
+                Av. 23 de Enero con Av. Las Samanes<br>
+                Edificio Autocentro<br>
+                Barinas, Sector La Federación<br>
+                Barinas, Venezuela
+              </address>
+            </div>
+          </div>
+
+          <!-- Columna 3: Mapa + botón -->
+          <div class="footer-column">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.123456789!2d-70.2251667!3d8.6229444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzcnMjIuNiJOIDcwwrAxMyczMC42Ilc!5e0!3m2!1ses!2sve!4v1620000000000!5m2!1ses!2sve"
+              width="262" height="auto" style="border:0;" allowfullscreen="" loading="lazy"
+              aria-label="Mapa de ubicación de la iglesia">
+            </iframe>
+            <a href="https://www.google.com/maps/place/8%C2%B037'22.6%22N+70%C2%B013'30.6%22W/@8.6229444,-70.2251667,17z/data=!3m1!4b1!4m4!3m3!8m2!3d8.6229444!4d-70.2251667"
+              target="_blank" class="mapa-boton">
+              <i class="fas fa-directions"></i> Abrir en Google Maps
+            </a>
+          </div>
+
+          <!-- Columna 4: Donaciones -->
+          <div class="footer-column">
+            <h4>DONACIONES</h4>
+            <p>Dios provee tanto la semilla para sembrar como el pan para comer</p>
+            <button onclick="toggleModal()" class="donate-btn" style="color: black;">Ver datos de Pago Móvil</button>
+          </div>
+
+          <!-- Modal -->
+          <div id="donationModal" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="toggleModal()">&times;</span>
+              <h3 style="color: black; white-space: nowrap;">Datos de Pago Móvil</h3>
+              <p><strong>Banco:</strong> Banco de Venezuela (0102)</p>
+              <p><strong>Teléfono:</strong> 0424-5000958</p>
+              <p><strong>C.I.:</strong> V-14.550.702</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Visión de Familia. Todos los derechos reservados.</p>
         </div>
       </div>
+    </footer>
+    <!--HASTA ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->
 
-      <!-- Columna 3: Mapa + botón -->
-      <div class="footer-column">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.123456789!2d-70.2251667!3d8.6229444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzcnMjIuNiJOIDcwwrAxMyczMC42Ilc!5e0!3m2!1ses!2sve!4v1620000000000!5m2!1ses!2sve"
-          width="300"
-          height="auto"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          aria-label="Mapa de ubicación de la iglesia">
-        </iframe>
-        <a href="https://www.google.com/maps/place/8%C2%B037'22.6%22N+70%C2%B013'30.6%22W/@8.6229444,-70.2251667,17z/data=!3m1!4b1!4m4!3m3!8m2!3d8.6229444!4d-70.2251667"
-          target="_blank"
-          class="mapa-boton">
-          <i class="fas fa-directions"></i> Abrir en Google Maps
-        </a>
-      </div>
+    <script src="main.js"></script>
 
-      <!-- Columna 4: Donaciones -->
-      <div class="footer-column">
-        <h4>DONACIONES</h4>
-        <p>Dios provee tanto la semilla para sembrar como el pan para comer</p>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2025 Visión de Familia. Todos los derechos reservados.</p>
-    </div>
-  </div>
-</footer>
-
-  <script src="main.js"></script>
 
 </body>
 
