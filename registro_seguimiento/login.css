@@ -1,0 +1,215 @@
+  /*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');*/
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f0f0; /* Degradado vibrante */
+    margin: 0;
+    height: 100vh; /* Mantiene la altura de la ventana */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.container {
+    background: #571b3c; 
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+    width: 360px;
+    padding: 40px 30px;
+
+}
+  h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+  }
+    .txtrecuperar
+{
+  font-size: 14px;
+  text-align:center;
+  width: 100px;
+  display: inline-block;
+  
+  border-radius:10px;
+
+  color:white;
+  cursor:pointer;
+}
+
+  button, input[type="submit"] {
+    background-color: #341931;
+    border: none;
+    color: white;
+    padding: 14px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-items: center;
+  }
+  .centrar
+  {
+    display: block;
+    margin: 0 auto;
+  }
+  button:hover, input[type="submit"]:hover {
+    background-color: #7a1e48;
+  }
+
+
+.toggle-link {
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #c1b8ff; /* Color del texto */
+    font-weight: 600;
+}
+.toggle-link:hover {
+    text-decoration: underline;
+    color: white; /* Color al pasar el mouse */
+}
+  .message {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .message.success {
+    color: #a6f0a6;
+  }
+  .message.error {
+    color: #f09696;
+  }
+  .welcome-message {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+   /* Para navegadores WebKit (Chrome, Safari) */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        /* Para Firefox */
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+/* Personalización de la barra de desplazamiento para WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+}
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Color del fondo de la barra de desplazamiento */
+}
+::-webkit-scrollbar-thumb {
+    background: #007aff; /* Color del "pulgar" de la barra de desplazamiento */
+    border-radius: 10px; /* Bordes redondeados */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #005bb5; /* Color del "pulgar" al pasar el mouse */
+}
+
+.caja_popup {
+  display: none; /* Oculta el popup por defecto */
+  position: fixed; /* Cambiado a fixed para cubrir toda la ventana */
+  top: 0; /* Asegura que cubra toda la ventana */
+  left: 0; /* Asegura que cubra toda la ventana */
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  width: 100%;
+  height: 100%;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+.contenedor_popup {
+  border-radius: 20px; /* Bordes redondeados más pronunciados */
+  top: 50%; /* Centrado vertical */
+  left: 50%; /* Centrado horizontal */
+  position: absolute;
+  transform: translate(-50%, -50%); /* Centrado exacto */
+  width: 400px; /* Ancho del contenedor */
+  background: #571b3c; /* Color de fondo del contenedor */
+  backdrop-filter: blur(15px); /* Efecto de desenfoque de fondo */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); /* Sombra */
+  padding: 40px 30px; /* Espaciado interno */
+  transition: all 0.2s; /* Transición suave */
+  color: #fff; /* Color del texto */
+}
+
+  /* Reset & base styles */
+  * {
+    box-sizing: border-box;
+  }
+
+
+  .form-group {
+    position: relative;
+    margin-bottom: 20px;
+    width: 280px;
+  }
+
+  input {
+    width: 100%;
+    border: 2px solid #bbb;
+    border-radius: 12px;
+    padding: 20px 16px 8px 16px;
+    font-size: 1rem;
+    color: #121212;
+    background: white;
+    outline-offset: 2px;
+    transition: border-color 0.3s ease;
+  }
+
+  input:focus {
+    border-color: #6b46c1;
+  }
+
+  /* Hide native placeholder but keep it for :placeholder-shown detection */
+  input::placeholder {
+    color: transparent;
+    transition: none;
+  }
+
+  label {
+    position: absolute;
+    left: 16px;
+    top: 4px;
+    font-weight: 600;
+    color: #888;
+    font-size: 1rem;
+    background: transparent;
+    padding: 0 4px;
+    pointer-events: none;
+    user-select: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Floating label when input focused or has value */
+  input:focus + label,
+  input:not(:placeholder-shown) + label {
+    top: 6px;
+    font-size: 1rem;
+    color: #888;
+  }
+
+  /* Accessible focus ring */
+  input:focus-visible {
+    outline: 3px solid #9f7aea;
+    outline-offset: 3px;
+  }
+
+   .error-message{
+      color: #cc3333;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: -12px;
+      margin-bottom: 16px;
+      display: none;
+    }
