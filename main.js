@@ -206,80 +206,148 @@ setInterval(() => {
     track.style.transform = `translateX(-${moveX}px)`;
 }, 3000);
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Creamos contenedor del menú, si no existe
-    let container = document.getElementById('menu-container');
-    if (!container) {
-        container = document.createElement('div');
-        container.id = 'menu-container';
-        document.body.appendChild(container);
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mainNav = document.getElementById('main-nav');
+
+// Función para cerrar el menú móvil completamente
+function closeMobileMenu() {
+    if (window.innerWidth <= 768) {
+        hamburgerBtn.classList.remove('active');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        hamburgerBtn.innerHTML = '&#9776;';
+        mainNav.classList.remove('active');
+        document.body.style.overflow = '';
     }
+}
 
-    // Insertamos el menú en el contenedor
-    container.innerHTML = `
-    <div class="portada-header" style="display:none; position: fixed; top: 50px; right: 0; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.3); width: 80vw; max-width: 300px; height: 100vh; overflow-y: auto; z-index: 1000; padding: 20px;">
-      <div class="links">
-        <nav class="main-nav">
-          <ul style="list-style:none; padding: 0; margin: 0;">
-            <li style="margin-bottom:10px;"><a href="main.php">Inicio</a></li>
-            <li style="margin-bottom:10px;"><a href="nosotros.html">Nosotros</a></li>
-            <li style="margin-bottom:10px; position: relative;">
-              <a href="#" id="ministerios-link" style="cursor:pointer; display: flex; justify-content: space-between; align-items: center;">
-                Ministerios <span style="font-size: 0.8em;">&#x25BC;</span>
-              </a>
-              <div class="dropdown-content" id="dropdown-content" style="display:none; padding-left: 15px; margin-top: 5px;">
-                <a href="#">Adoración</a><br/>
-                <a href="#">Amor y Misericordia</a><br/>
-                <a href="#">Diseño y Ambiente</a><br/>
-                <a href="#">Danza</a><br/>
-                <a href="#">Intercesión</a><br/>
-                <a href="#">Operaciones</a><br/>
-                <a href="#">Protocolo</a><br/>
-                <a href="#">Registro y Seguimiento</a><br/>
-                <a href="#">UMAV</a><br/>
-                <a href="#">VDF KIDS</a><br/>
-                <a href="#">Escuela de la Visión</a><br/>
-                <a href="#">Evangelismo</a>
-              </div>
-            </li>
-            <li style="margin-bottom:10px;"><a href="https://wa.me/584145064924">Contacto</a></li>
-            <li><a href="#">Registro</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  `;
+// Menú hamburguesa
+if (hamburgerBtn && mainNav) {
+    hamburgerBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        this.classList.toggle('active');
+        mainNav.classList.toggle('active');
+        this.innerHTML = isExpanded ? '&#9776;' : '✕';
+        
+        // Habilitar/deshabilitar scroll cuando el menú está abierto
+        document.body.style.overflow = !isExpanded ? 'hidden' : '';
+    });
 
-    const menu = container.querySelector('.portada-header');
-    const hamburgerBtn = document.getElementById('hamburger-btn');
+    // Close menu when clicking on links except ministerios
+    document.querySelectorAll('.main-nav a:not(#ministerios-link)').forEach(link => {
+        link.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mainNav.contains(e.target) && e.target !== hamburgerBtn) {
+            closeMobileMenu();
+        }
+    });
+}
+
+// Dropdown de Ministerios
+document.addEventListener('DOMContentLoaded', function() {
     const ministeriosLink = document.getElementById('ministerios-link');
     const dropdownContent = document.getElementById('dropdown-content');
-
-    // Mostrar/Ocultar menú hamburguesa al click
-    hamburgerBtn.addEventListener('click', () => {
-        if (menu.style.display === 'none' || menu.style.display === '') {
-            menu.style.display = 'block';
+    
+    if (ministeriosLink && dropdownContent) {
+        // Función para cerrar el dropdown
+        const closeDropdown = () => {
+            dropdownContent.style.maxHeight = '0';
+            ministeriosLink.setAttribute('aria-expanded', 'false');
+        };
+        
+        // Función para abrir el dropdown
+        const openDropdown = () => {
+            dropdownContent.style.maxHeight = dropdownContent.scrollHeight + 'px';
+            ministeriosLink.setAttribute('aria-expanded', 'true');
+        };
+        
+        // Comportamiento para móvil
+        const setupMobileBehavior = () => {
+            // Eliminar eventos de desktop
+            ministeriosLink.removeEventListener('mouseenter', openDropdown);
+            const dropdownParent = ministeriosLink.closest('.has-dropdown');
+            if (dropdownParent) {
+                dropdownParent.removeEventListener('mouseleave', closeDropdown);
+            }
+            
+            // Inicialmente cerrado
+            closeDropdown();
+            
+            // Al hacer clic en Ministerios
+            ministeriosLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                
+                if (isExpanded) {
+                    closeDropdown();
+                } else {
+                    // Abrir dropdown con scroll limitado
+                     dropdownContent.style.display = 'block';
+                    dropdownContent.style.maxHeight = '60vh';
+                    dropdownContent.style.overflowY = 'auto';
+                    dropdownContent.scrollTop = 0;
+                    ministeriosLink.setAttribute('aria-expanded', 'true');
+                    
+                    // Asegurar que el dropdown sea visible
+                    setTimeout(() => {
+                        dropdownContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 100);
+                }
+            });
+        };
+        
+        // Comportamiento para desktop
+        const setupDesktopBehavior = () => {
+            // Eliminar eventos de móvil
+            ministeriosLink.removeEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            });
+            
+            // Configurar eventos hover
+            ministeriosLink.addEventListener('mouseenter', openDropdown);
+            
+            const dropdownParent = ministeriosLink.closest('.has-dropdown');
+            if (dropdownParent) {
+                dropdownParent.addEventListener('mouseleave', closeDropdown);
+            }
+            
+            // Resetear estilos
+            dropdownContent.style.maxHeight = '';
+            dropdownContent.style.overflowY = '';
+        };
+        
+        // Verificar el tamaño inicial
+        if (window.innerWidth <= 768) {
+            setupMobileBehavior();
         } else {
-            menu.style.display = 'none';
-            dropdownContent.style.display = 'none';
+            setupDesktopBehavior();
         }
-    });
-
-    // Mostrar/Ocultar dropdown ministerios al click
-    ministeriosLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (dropdownContent.style.display === 'none' || dropdownContent.style.display === '') {
-            dropdownContent.style.display = 'block';
-        } else {
-            dropdownContent.style.display = 'none';
-        }
-    });
-
-    // Cerrar menú si se hace click fuera
-    document.addEventListener('click', (e) => {
-        if (!menu.contains(e.target) && e.target !== hamburgerBtn) {
-            menu.style.display = 'none';
-            dropdownContent.style.display = 'none';
-        }
-    });
+        
+        // Manejar cambios de tamaño de pantalla
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 768) {
+                setupMobileBehavior();
+            } else {
+                setupDesktopBehavior();
+            }
+        });
+        
+        // Cerrar dropdown al hacer clic fuera (solo para móvil)
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                if (!ministeriosLink.contains(e.target) && !dropdownContent.contains(e.target)) {
+                    closeDropdown();
+                }
+            }
+        });
+    }
 });
