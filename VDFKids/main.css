@@ -2581,47 +2581,59 @@ section {
 /* Estilos responsive para menú */
 @media (max-width: 768px) {
   .main-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: rgb(51, 4, 12);
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 20px 0;
+    height: 100vh;
+    background-color: rgba(51, 4, 12, 0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
     z-index: 1000;
+    display: flex;
   }
   
-  .main-header.scrolled .header-title {
-    font-size: 1.4rem;
-    opacity: 1;
-  }
-
   .main-nav.active {
-    display: block;
+    transform: translateX(0);
   }
-
+  
   .main-nav ul {
     flex-direction: column;
     align-items: center;
-    gap: 15px;
   }
-
+  
   .main-nav li {
-    margin-left: 0;
+    margin: 15px 0;
   }
-
-  .has-dropdown .dropdown-content {
-    display: none;
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
+  
+  .has-dropdown .dropdown-menu {
+    position: static;
+    transform: none;
+    background-color: transparent;
+    box-shadow: none;
+    display: none !important;
   }
-
-  .has-dropdown.open .dropdown-content {
-    display: flex;
+  .has-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+  
+  .dropdown-menu.active {
+    display: block !important;
   }
-
-  .hamburger {
+   .hamburger {
     display: block;
+  }
+
+  .main-header.scrolled .header-title {
+    font-size: 1rem;
+    opacity: 1;
+  }
+
+  .main-header.scrolled {
+    padding: 45px 0;
   }
 }
