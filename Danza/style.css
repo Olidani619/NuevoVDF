@@ -1293,6 +1293,8 @@ section h2::after {
         width: 100%;
         margin: 0 !important;
         text-align: center;
+        position: relative;
+        z-index: auto;
     }
     /* Enlace "Ministerios" centrado */
     #ministerios-link {
@@ -1307,15 +1309,52 @@ section h2::after {
     
     /* Dropdown centrado y ancho completo */
     .dropdown-menu {
-        width: 90% !important;
+       
         margin-left: auto !important;
         margin-right: auto !important;
         left: 0 !important;
         right: 0 !important;
+         position: relative !important; /* Cambia de absolute a relative */
+        z-index: 1001 !important;
+        width: 100% !important;
+        margin-top: 10px !important;
+        margin-bottom: 15px !important;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
+        overflow-y: auto !important; /* Habilita scroll vertical */
+        overscroll-behavior: contain; /* Evita que el scroll afecte la página detrás */
+        position: relative !important;
+        width: 100% !important;
+        background-color: rgba(51, 4, 12, 0.98) !important;
+        transition: max-height 0.3s ease;
+    }
+     /* Items del dropdown */
+    .dropdown-menu li {
+        padding: 0;
     }
     
     /* Ajuste para los items del dropdown */
     .dropdown-menu a {
         text-align: center !important;
+         padding: 12px 20px !important;
+        white-space: nowrap;
+    }
+    /* Scrollbar personalizada */
+    .dropdown-menu::-webkit-scrollbar {
+        width: 5px;
+    }
+    
+    .dropdown-menu::-webkit-scrollbar-thumb {
+        background-color: var(--gold-accent);
+        border-radius: 10px;
+    }
+     
+      .has-dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Espacio entre items */
+    .main-nav li:not(:last-child) {
+        margin-bottom: 5px;
     }
 }

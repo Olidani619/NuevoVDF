@@ -77,17 +77,30 @@ document.addEventListener('DOMContentLoaded', function() {
             closeDropdown();
             
             // Al hacer clic en Ministerios
-            ministeriosLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                if (isExpanded) {
-                    closeDropdown();
-                } else {
-                    openDropdown();
-                }
-            });
+           // Modificación del evento click
+ministeriosLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+    const dropdownContent = document.getElementById('dropdown-content');
+    
+    if (isExpanded) {
+        // Cerrar dropdown
+        dropdownContent.style.maxHeight = '0';
+    } else {
+        // Abrir dropdown con scroll
+        dropdownContent.style.maxHeight = '60vh'; // 60% del viewport height
+        dropdownContent.scrollTop = 0; // Resetear posición del scroll
+        
+        // Opcional: Asegurar que el dropdown sea visible en pantalla
+        setTimeout(() => {
+            dropdownContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+    }
+    
+    this.setAttribute('aria-expanded', !isExpanded);
+});
             
             // Cerrar al hacer clic fuera
             document.addEventListener('click', function(e) {
