@@ -101,6 +101,8 @@ include('../conexion.php');
     <option value="cedula">Cédula</option>
     <option value="telefono">Teléfono</option>
     <option value="fecha">Fecha</option>
+    <option value="Genero">Género</option>
+    <option value="HCM">HCM</option>
     <option value="ocupacion">Ocupación</option>
     <option value="profesion">Profesión</option>
     <option value="direccion">Dirección</option>
