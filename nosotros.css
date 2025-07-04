@@ -10,7 +10,7 @@
 
 .pagina-nosotros .contenido-principal {
   background: transparent;
-  padding: 2rem 0;
+
 }
 
 .pagina-nosotros .biografia {
@@ -54,6 +54,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
 
 .mision-vision {
   background-color: #F9F5F0;
@@ -229,18 +230,6 @@ p {
   opacity: 1;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .fundamentos-tarjetas {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .fundamentos-tarjetas {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* Contenedor principal de la sección fundadores */
 .bloque-fundadores {
@@ -272,25 +261,6 @@ p {
   /* Esto ayuda a que ambas tarjetas ocupen igual espacio */
 }
 
-/* RESPONSIVE - MODIFICADO */
-@media (max-width: 768px) {
-  .bloque-fundadores {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .tarjeta-fundador {
-    width: 90%;
-    /* En móvil ocupa casi todo el ancho */
-    margin-bottom: 2rem;
-    /* Espacio entre tarjetas en móvil */
-  }
-
-  .tarjeta-fundador:last-child {
-    margin-bottom: 0;
-    /* Elimina el margen inferior de la última tarjeta */
-  }
-}
 
 .tarjeta-fundador:hover {
   transform: scale(1.02);
@@ -365,325 +335,317 @@ p {
   border: 1px solid #f0f0f0;
 }
 
-/* Ajustes responsive para la nueva imagen */
-@media (max-width: 768px) {
-  .imagen-fundador2 {
-    max-width: 100%;
-    /* En móviles ocupa casi todo el ancho */
-    margin: 0rem 0;
-    /* Ajuste de márgenes en móvil */
-  }
+.pastoral-team-section {
+  padding: 60px 20px;
+  /* Espaciado interno de la sección */
+  background-color: #1a1a1a;
+  /* Fondo casi negro para toda la sección */
+  text-align: center;
+  /* Centrar el contenido horizontalmente */
+  color: #fff;
+  /* Color de texto predeterminado para la sección (blanco) */
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ====================
+   2. Cabecera de la Sección
+   ==================== */
+.section-header {
+  margin-bottom: 40px;
+  /* Espacio debajo de la cabecera */
+}
+
+.section-title {
+  font-size: 2.5em;
+  /* Tamaño de fuente del título "EQUIPO PASTORAL" */
+  color: #fff;
+  /* Color blanco para el título */
+  margin-bottom: 10px;
+  /* Espacio debajo del título */
+  text-transform: uppercase;
+  /* Convertir el texto a mayúsculas */
+  font-weight: bold;
+  /* Negrita para el título */
+}
+
+.title-underline {
+  width: 80px;
+  /* Ancho de la línea decorativa */
+  height: 4px;
+  /* Altura de la línea decorativa */
+  background-color: #d4af37;
+  /* Color dorado para la línea */
+  margin: 0 auto;
+  /* Centrar la línea horizontalmente */
+}
+
+/* ====================
+   3. Contenedor del Carrusel
+   ==================== */
+.carousel-container {
+  position: relative;
+  /* Esencial para posicionar los botones de navegación */
+  max-width: 1200px;
+  /* Ancho máximo para el área visible del carrusel */
+  margin: 0 auto;
+  /* Centrar el contenedor horizontalmente */
+  overflow: hidden;
+  /* Oculta las tarjetas que están fuera de la vista */
+  padding: 20px 0;
+  /* Padding vertical para el carrusel */
+}
+
+.carousel-inner {
+  display: flex;
+  /* Usar Flexbox para organizar las tarjetas en una fila */
+  transition: transform 0.5s ease-in-out;
+  /* Transición suave para el movimiento del carrusel */
+  gap: 30px;
+  /* Espacio uniforme entre las tarjetas */
+  /* No usamos justify-content: center aquí porque el JS moverá el carrusel */
+}
+
+/* ====================
+   4. Estilos de las Tarjetas Individuales
+   ==================== */
+.carousel-item {
+  background-color: #333;
+  /* Fondo oscuro para cada tarjeta */
+  border-radius: 15px;
+  /* Bordes redondeados para las tarjetas */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  /* Sombra para dar efecto de profundidad */
+  padding: 30px;
+  /* Relleno interno de la tarjeta (más grande) */
+  text-align: center;
+  /* Centrar el contenido de texto dentro de la tarjeta */
+  flex: 0 0 calc(33.333% - 20px);
+  /* 3 tarjetas por vista: (100%/3) - espacio para gaps */
+  max-width: 380px;
+  /* Ancho máximo fijo para cada tarjeta (más grande) */
+  display: flex;
+  /* Usar Flexbox para organizar el contenido verticalmente */
+  flex-direction: column;
+  /* Apilar el contenido (imagen, nombre, rol) verticalmente */
+  align-items: center;
+  /* Centrar los elementos horizontalmente dentro de la tarjeta */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+  /* Transiciones para efectos */
+
+  /* Estilo por defecto para todas las tarjetas (inactivas) */
+  opacity: 0.6;
+  /* Ligeramente opacas si no son la central activa */
+}
+
+/* Estilo para la tarjeta "activa" (la del centro) */
+.carousel-item.active {
+  opacity: 1;
+  /* Completamente visible */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+  /* Sombra más pronunciada para destacar */
+}
+
+/* Efecto hover general para todas las tarjetas */
+.carousel-item:hover {
+  transform: translateY(-10px);
+  /* Elevación y ligera escala al pasar el ratón */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+  /* Sombra más fuerte al pasar el ratón */
+  /* Nota: El efecto de escala y opacidad de '.active' anulará parte de este hover si son la activa */
+}
+
+
+/* ====================
+   5. Estilos de la Imagen del Pastor
+   ==================== */
+.pastor-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 25px;
+  border: 6px solid #d4af37;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translateZ(0);
+  transform: translateZ(0);
+  object-fit: contain;
+
+}
+
+
+
+/* ====================
+   6. Estilos del Texto del Pastor
+   ==================== */
+.pastor-name {
+  font-size: 1.7em;
+  /* Tamaño de fuente para el nombre del pastor (más grande) */
+  color: #d4af37;
+  /* Color dorado para el nombre */
+  margin-bottom: 12px;
+  /* Espacio debajo del nombre */
+  font-weight: 600;
+  /* Peso de la fuente (semi-negrita) */
+}
+
+.pastor-role {
+  font-size: 1.1em;
+  /* Tamaño de fuente para el rol del pastor (más grande) */
+  color: #ccc;
+  /* Color gris claro para el rol */
+  line-height: 1.6;
+  /* Altura de línea para mejor legibilidad */
+  text-align: center;
+}
+
+/* ====================
+   7. Botones de Navegación del Carrusel
+   ==================== */
+.carousel-nav {
+  position: absolute;
+  /* Posicionamiento absoluto respecto a .carousel-container */
+  top: 50%;
+  /* Centrar verticalmente */
+  transform: translateY(-50%);
+  /* Ajuste fino para centrar */
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Fondo semi-transparente oscuro */
+  color: #fff;
+  /* Color del ícono (flecha) */
+  border: none;
+  /* Sin borde */
+  padding: 15px 20px;
+  /* Relleno para el botón (más grande) */
+  border-radius: 50%;
+  /* Hacer el botón circular */
+  cursor: pointer;
+  /* Indicar que es clickeable */
+  font-size: 2.2em;
+  /* Tamaño del ícono (flecha) */
+  z-index: 10;
+  /* Asegurar que esté por encima de las tarjetas */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  /* Transición para hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  /* Sombra para el botón */
+}
+
+.carousel-nav:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Fondo más oscuro al pasar el ratón */
+  transform: translateY(-50%) scale(1.1);
+  /* Ligeramente más grande al pasar el ratón */
+}
+
+.carousel-nav.prev {
+  left: 10px;
+}
+
+.carousel-nav.next {
+  right: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .biografia {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .biografia-texto {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .pagina-nosotros .biografia img {
+    width: 80%;
+  }
+
+  .mision-vision-contenedor {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .mision,
+  .vision {
+    width: 80%;
+  }
+
   .bloque-fundadores {
     flex-direction: column;
     align-items: center;
   }
 
   .tarjeta-fundador {
-    width: 90%;
-  }
-}
-
-/* Estilos para la sección completa del Equipo Pastoral */
-.pastoral-team-section {
-  width: 100%;
-  margin: 50px auto;
-  background-color: #333;
-  color: #f0f0f0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 20px;
-  /* Space below the title and line */
-}
-
-.section-title {
-  font-size: 3em;
-  color: #f0f0f0;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.title-underline {
-  position: relative;
-  width: 80px;
-  height: 4px;
-  background-color: #ffcc00;
-  margin: 0 auto;
-  border-radius: 2px;
-}
-
-.title-underline::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  background-color: #ffcc00;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
-}
-
-
-
-/* Estilos para la sección completa del Equipo Pastoral */
-.pastoral-team-section {
-  width: 100%;
-  max-width: 1400px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #333;
-  color: #f0f0f0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-  /* No es necesario position: relative; aquí a menos que quieras posicionar algo absoluto a esta sección */
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.section-title {
-  font-size: 3em;
-  color: #f0f0f0;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.title-underline {
-  position: relative;
-  width: 80px;
-  height: 4px;
-  background-color: #ffcc00;
-  margin: 0 auto;
-  border-radius: 2px;
-}
-
-.title-underline::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  background-color: #ffcc00;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
-}
-
-/* --- Nuevo contenedor para el carrusel y las flechas --- */
-.carousel-wrapper {
-  position: relative;
-  /* ¡IMPORTANTE! Para que los botones se posicionen respecto a este */
-  width: 90%;
-  /* Ancho que contendrá tanto el carrusel como las flechas */
-  max-width: 1000px;
-  /* Max width para el wrapper */
-  margin-top: 20px;
-  padding: 0 60px;
-  /* Deja espacio a los lados para las flechas dentro del wrapper */
-  box-sizing: border-box;
-  /* overflow: visible; si los botones sobresalen mucho del wrapper */
-}
-
-
-.carousel-container {
-  position: relative;
-  width: 100%;
-  /* Ocupa el 100% del ancho del .carousel-wrapper */
-  max-width: none;
-  /* Resetear max-width para que sea 100% del padre */
-  overflow: hidden;
-  /* ¡VUELVE A HIDDEN para cortar las tarjetas! */
-  padding: 40px 0;
-  /* Padding interno para el contenido de las tarjetas */
-  box-sizing: border-box;
-}
-
-.carousel-inner {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item {
-  flex: 0 0 auto;
-  width: 380px;
-  background-color: #2a2a2a;
-  border-radius: 15px;
-  padding: 25px;
-  margin: 0 20px;
-  /* Espacio entre tarjetas */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-  color: #f0f0f0;
-  text-align: center;
-  min-height: 500px;
-  opacity: 0.5;
-  transform: scale(0.85);
-  transition: all 0.5s ease-in-out;
-  box-sizing: border-box;
-}
-
-.carousel-item.active {
-  opacity: 1;
-  transform: scale(1);
-  background-color: #3b3b3b;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
-}
-
-.pastor-image {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 20px;
-  border: 5px solid #ffcc00;
-  box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.pastor-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  image-rendering: auto; /* o simplemente quita esta propiedad */
-}
-
-
-.pastor-name {
-  font-size: 1.8em;
-  font-weight: bold;
-  color: #fff;
-  margin-bottom: 8px;
-}
-
-.pastor-role {
-  font-size: 1.1em;
-  color: #ffcc00;
-  margin-bottom: 15px;
-  font-style: italic;
-  text-align: center;
-}
-
-.pastor-description {
-  font-size: 0.95em;
-  color: #ccc;
-  line-height: 1.5;
-  text-align: center;
-  flex-grow: 1;
-}
-
-/* Navigation Arrows (ahora posicionados con respecto al .carousel-wrapper) */
-.carousel-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  border: none;
-  padding: 12px 18px;
-  font-size: 1.8em;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
-  transition: background-color 0.3s ease;
-}
-
-.carousel-nav.prev {
-  left: 0;
-  /* Ahora quedan en el borde del .carousel-wrapper */
-}
-
-.carousel-nav.next {
-  right: 0;
-  /* Ahora quedan en el borde del .carousel-wrapper */
-}
-
-.carousel-nav:hover {
-  background-color: rgba(0, 0, 0, 0.9);
-}
-
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2.2em;
-  }
-
-  .carousel-wrapper {
-    padding: 0 40px;
-    /* Reduce el padding del wrapper en pantallas medianas */
+    width: 80%;
   }
 
   .carousel-item {
-    width: 220px;
-    margin: 0 10px;
-    padding: 20px;
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .fundamentos-tarjetas {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fundamentos-cards {
+    min-height: 180px;
+    padding: 1rem;
   }
 
   .pastor-image {
-    width: 150px;
-    height: 150px;
-  }
-
-  .pastor-name {
-    font-size: 1.5em;
-  }
-
-  .pastor-role {
-    font-size: 1em;
-  }
-
-  .carousel-nav {
-    padding: 8px 12px;
-    font-size: 1.2em;
-    left: 0px;
-    right: 0px;
-  }
-}
-
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 1.8em;
-  }
-
-  .carousel-wrapper {
-    padding: 0 10px;
-    /* Reduce aún más el padding en móviles */
+    width: 200px;
+    height: 200px;
   }
 
   .carousel-item {
-    width: 85vw;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-
-  .carousel-inner {
-    justify-content: flex-start;
-    transform: translateX(0) !important;
+    flex: 0 0 90%;
+    max-width: 90%;
   }
 
   .carousel-nav {
-    display: none;
-    /* O puedes hacerlos visibles y ajustarlos */
+    padding: 10px 14px;
+    font-size: 1.6em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .fundamentos-tarjetas {
+    grid-template-columns: 1fr;
+  }
+
+  .pagina-nosotros .biografia img {
+    width: 100%;
+  }
+
+  .mision,
+  .vision {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .tarjeta-fundador {
+    width: 100%;
+  }
+
+  .pastor-image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .carousel-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .carousel-nav {
+    font-size: 1.5em;
+    padding: 8px 12px;
   }
 }
