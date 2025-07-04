@@ -1,165 +1,128 @@
-// script.js - Versión integrada y optimizada
-
 document.addEventListener('DOMContentLoaded', function() {
-    // ========== ANIMACIONES INICIALES ==========
-    const heroH1 = document.querySelector('.hero h1');
-    const heroP = document.querySelector('.hero p');
-
-    if (heroH1 && heroP) {
-        heroH1.style.opacity = 0;
-        heroP.style.opacity = 0;
-        heroH1.style.transform = 'translateY(20px)';
-        heroP.style.transform = 'translateY(20px)';
-
-        setTimeout(() => {
-            heroH1.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
-            heroP.style.transition = 'opacity 1s ease-out 0.3s, transform 1s ease-out 0.3s';
-            heroH1.style.opacity = 1;
-            heroP.style.opacity = 1;
-            heroH1.style.transform = 'translateY(0)';
-            heroP.style.transform = 'translateY(0)';
-        }, 100);
-    }
-
-    // ========== SCROLL HEADER ==========
+    // Header scroll effect
     const header = document.querySelector('.main-header');
     if (header) {
         window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-                header.classList.toggle('more-scroll', window.scrollY > 200);
-            } else {
-                header.classList.remove('scrolled', 'more-scroll');
-            }
+            const shouldAddClass = window.scrollY > 50;
+            header.classList.toggle('scrolled', shouldAddClass);
+            header.classList.toggle('more-scroll', window.scrollY > 200);
         });
     }
 
-    // ========== MENÚ HAMBURGUESA ==========
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const mainNav = document.querySelector('.main-nav');
-    
-    if (hamburgerBtn && mainNav) {
-        // Solo inicializar hamburguesa en móvil
-        if (window.innerWidth <= 768) {
-            hamburgerBtn.style.display = 'block';
-            mainNav.style.display = 'none';
-        }
+    // Hamburger menu functionality - Modificado
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mainNav = document.getElementById('main-nav');
 
-        hamburgerBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            this.classList.toggle('active');
-            mainNav.classList.toggle('active');
-            
-            // Actualizar display y contenido del botón
+if (hamburgerBtn && mainNav) {
+    hamburgerBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        this.classList.toggle('active');
+        mainNav.classList.toggle('active');
+        this.innerHTML = isExpanded ? '&#9776;' : '✕';
+        
+        // Habilitar/deshabilitar scroll cuando el menú está abierto
+        document.body.style.overflow = !isExpanded ? 'hidden' : '';
+    });
+
+    // Close menu when clicking on links except ministerios
+    document.querySelectorAll('.main-nav a:not(#ministerios-link)').forEach(link => {
+        link.addEventListener('click', () => {
             if (window.innerWidth <= 768) {
-                mainNav.style.display = isExpanded ? 'none' : 'block';
-            }
-            this.innerHTML = this.classList.contains('active') ? '✕' : '&#9776;';
-        });
-
-        document.querySelectorAll('.main-nav a').forEach(link => {
-            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('active');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                hamburgerBtn.innerHTML = '&#9776;';
                 mainNav.classList.remove('active');
-                if (hamburgerBtn) {
-                    hamburgerBtn.classList.remove('active');
-                    hamburgerBtn.setAttribute('aria-expanded', 'false');
-                    hamburgerBtn.innerHTML = '&#9776;';
-                    if (window.innerWidth <= 768) {
-                        mainNav.style.display = 'none';
-                    }
-                }
-            });
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!mainNav.contains(e.target) && e.target !== hamburgerBtn) {
-                mainNav.classList.remove('active');
-                if (hamburgerBtn) {
-                    hamburgerBtn.classList.remove('active');
-                    hamburgerBtn.setAttribute('aria-expanded', 'false');
-                    hamburgerBtn.innerHTML = '&#9776;';
-                    if (window.innerWidth <= 768) {
-                        mainNav.style.display = 'none';
-                    }
-                }
+                document.body.style.overflow = '';
             }
         });
-    }
+    });
 
-    // ========== DROPDOWN MINISTERIOS ==========
-    // ========== DROPDOWN MINISTERIOS ==========
-const ministeriosLink = document.getElementById('ministerios-link');
-const dropdownContent = document.getElementById('dropdown-content');
-const ministeriosItem = ministeriosLink ? ministeriosLink.closest('li') : null;
-
-if (ministeriosLink && dropdownContent && ministeriosItem) {
-    // Desktop (hover)
-    if (window.innerWidth > 768) {
-        ministeriosItem.addEventListener('mouseenter', () => {
-            dropdownContent.style.display = 'block';
-        });
-
-        ministeriosItem.addEventListener('mouseleave', () => {
-            setTimeout(() => {
-                if (!dropdownContent.matches(':hover')) {
-                    dropdownContent.style.display = 'none';
-                }
-            }, 200);
-        });
-
-        dropdownContent.addEventListener('mouseleave', () => {
-            dropdownContent.style.display = 'none';
-        });
-    } else {
-        // Mobile (click)
-        ministeriosLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            dropdownContent.style.display = isExpanded ? 'none' : 'block';
-            
-            // Evitar que el menú principal se cierre
-            if (hamburgerBtn && mainNav) {
-                hamburgerBtn.classList.add('active');
-                hamburgerBtn.setAttribute('aria-expanded', 'true');
-                mainNav.classList.add('active');
-                mainNav.style.display = 'block';
-            }
-        });
-
-        // Cerrar dropdown al hacer clic fuera en móvil
-        document.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                if (!ministeriosItem.contains(e.target) && 
-                    e.target !== hamburgerBtn && 
-                    !mainNav.contains(e.target)) {
-                    dropdownContent.style.display = 'none';
-                    ministeriosLink.setAttribute('aria-expanded', 'false');
-                }
-            }
-        });
-    }
-
-    // Manejar cambios de tamaño de pantalla
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            // Resetear estilos para desktop
-            dropdownContent.style.display = '';
-            ministeriosLink.setAttribute('aria-expanded', 'false');
-        } else {
-            // Resetear estilos para móvil
-            if (!ministeriosLink.getAttribute('aria-expanded') === 'true') {
-                dropdownContent.style.display = 'none';
-            }
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mainNav.contains(e.target) && e.target !== hamburgerBtn) {
+            hamburgerBtn.classList.remove('active');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            hamburgerBtn.innerHTML = '&#9776;';
+            mainNav.classList.remove('active');
+            document.body.style.overflow = '';
         }
     });
 }
 
-    // ========== ANIMACIÓN SECCIONES ==========
+    // Ministerios dropdown functionality - Versión corregida
+// Dropdown de Ministerios - Versión definitiva
+document.addEventListener('DOMContentLoaded', function() {
+    const ministeriosLink = document.getElementById('ministerios-link');
+    const dropdownContent = document.getElementById('dropdown-content');
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    
+    if (ministeriosLink && dropdownContent) {
+        // Función para cerrar el dropdown
+        const closeDropdown = () => {
+            dropdownContent.style.maxHeight = '0';
+            ministeriosLink.setAttribute('aria-expanded', 'false');
+        };
+        
+        // Función para abrir el dropdown
+        const openDropdown = () => {
+            dropdownContent.style.maxHeight = dropdownContent.scrollHeight + 'px';
+            ministeriosLink.setAttribute('aria-expanded', 'true');
+        };
+        
+        // Comportamiento para móvil
+        if (window.innerWidth <= 768) {
+            // Inicialmente cerrado
+            closeDropdown();
+            
+            // Al hacer clic en Ministerios
+            ministeriosLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                if (isExpanded) {
+                    closeDropdown();
+                } else {
+                    openDropdown();
+                }
+            });
+            
+            // Cerrar al hacer clic fuera
+            document.addEventListener('click', function(e) {
+                if (!ministeriosLink.contains(e.target) && !dropdownContent.contains(e.target)) {
+                    closeDropdown();
+                }
+            });
+        }
+        
+        // Comportamiento para desktop
+        else {
+            ministeriosLink.addEventListener('mouseenter', openDropdown);
+            
+            const dropdownParent = ministeriosLink.closest('.has-dropdown');
+            dropdownParent.addEventListener('mouseleave', closeDropdown);
+        }
+        
+        // Manejar cambios de tamaño de pantalla
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                // Restablecer para desktop
+                dropdownContent.style.maxHeight = '';
+                dropdownContent.style.display = '';
+                ministeriosLink.setAttribute('aria-expanded', 'false');
+            } else {
+                // Asegurarse de que esté cerrado en móvil
+                closeDropdown();
+            }
+        });
+    }
+});
+
+
+
+    // Section animations
     const sections = document.querySelectorAll('section');
     if (sections.length > 0) {
         const observer = new IntersectionObserver((entries) => {
@@ -167,7 +130,6 @@ if (ministeriosLink && dropdownContent && ministeriosItem) {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = 1;
                     entry.target.style.transform = 'translateY(0)';
-                    entry.target.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
                     observer.unobserve(entry.target);
                 }
             });
@@ -176,62 +138,12 @@ if (ministeriosLink && dropdownContent && ministeriosItem) {
         sections.forEach(section => {
             section.style.opacity = 0;
             section.style.transform = 'translateY(50px)';
+            section.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
             observer.observe(section);
         });
     }
 
-    // ========== MODAL DOCTRINAS ==========
-    const modal = document.getElementById("doctrinaModal");
-    if (modal) {
-        const closeBtn = modal.querySelector(".close-modal");
-        if (closeBtn) {
-            closeBtn.addEventListener("click", () => {
-                modal.style.display = "none";
-            });
-        }
-
-        window.addEventListener("click", (e) => {
-            if (e.target === modal) modal.style.display = "none";
-        });
-
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape" && modal.style.display === "flex") {
-                modal.style.display = "none";
-            }
-        });
-
-        document.querySelectorAll(".doctrina-card").forEach((card, index) => {
-            card.addEventListener("click", () => {
-                const doctrinas = {
-                    1: { title: "2 Timoteo 3:16-17", description: "Toda la Escritura es inspirada por Dios...", verse: "Reina Valera" },
-                    // ... otras doctrinas
-                };
-                const data = doctrinas[index + 1];
-                if (data) {
-                    document.getElementById("modal-title").textContent = data.title;
-                    document.getElementById("modal-description").textContent = data.description;
-                    document.getElementById("modal-verse").textContent = data.verse;
-                    modal.style.display = "flex";
-                }
-            });
-        });
-    }
-
-    // ========== CARRUSEL ==========
-    const track = document.querySelector('.responsables');
-    if (track) {
-        const carouselSections = document.querySelectorAll('.section');
-        if (carouselSections.length > 0) {
-            let index = 0;
-            setInterval(() => {
-                index = (index + 1) % carouselSections.length;
-                const sectionWidth = carouselSections[0].offsetWidth + 20;
-                track.style.transform = `translateX(-${sectionWidth * index}px)`;
-            }, 3000);
-        }
-    }
-
-    // ========== MODAL DONACIONES ==========
+    // Donation modal
     const donationModal = document.getElementById('donationModal');
     if (donationModal) {
         window.toggleModal = function() {
@@ -246,7 +158,7 @@ if (ministeriosLink && dropdownContent && ministeriosItem) {
     }
 });
 
-// ========== FUNCIONES GLOBALES ==========
+// Scroll to top function
 function volverInicio() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
