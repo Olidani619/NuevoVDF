@@ -1,6 +1,3 @@
-/* style.css - Estilos Unificados y Corregidos para la Página del Ministerio de Danza */
-
-/* --- Variables de Color --- */
 :root {
     --primary-color: #761727; /* Rojo oscuro para acentos y header */
     --background-light: #ffffff; /* Blanco para fondos claros */
@@ -193,10 +190,6 @@ body {
 
 
 
-
-
-
-
 /* --- Secciones de Contenido de la Página de Danza --- */
 main {
     padding-top: 0;
@@ -238,11 +231,11 @@ main {
     z-index: 2;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* ¡Clave! Separa h1 y p a los extremos */
-    height: 100%; /* ¡Clave! Permite que ocupe toda la altura de su padre flex */
+    justify-content: space-between; 
+    height: 100%; 
     width: 100%;
-    max-width: 1200px; /* Limita el ancho del contenido para lectura */
-    padding: 20px; /* Espaciado interno para el texto desde los bordes */
+    max-width: 1200px; 
+    padding: 20px; 
 }
 
 .hero-danza h1 {
