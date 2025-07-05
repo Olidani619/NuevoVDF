@@ -17,15 +17,141 @@
   display: flex;
 }
 
+/* Estilos base */
+.biografia {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; /* Alinea al inicio para mantener coherencia */
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
 .biografia-texto {
-  width: 50%;
+  flex: 1;
+  min-width: 300px;
   text-align: justify;
-  padding-right: 30px;
+  padding: 15px; /* Margen interno igual para ambos */
+  margin: 10px; /* Margen externo igual para ambos */
+  box-sizing: border-box;
 }
 
 .fotos {
   display: flex;
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  padding: 15px; /* Mismo padding que el texto */
+  margin: 10px; /* Mismo margin que el texto */
+  box-sizing: border-box;
+  justify-content: center;
+}
 
+.fotos img {
+  width: calc(50% - 2px); /* Ajuste fino para el borde */
+  height: auto;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+/* Versión tablet (768px) */
+@media (max-width: 768px) {
+  .biografia {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+  
+  .biografia-texto,
+  .fotos {
+    width: calc(100% - 40px); /* Resta los márgenes totales */
+    max-width: 600px;
+    padding: 15px;
+    margin: 10px 0; /* Margen solo arriba/abajo */
+  }
+}
+
+/* Versión móvil (480px) */
+@media (max-width: 480px) {
+  .biografia {
+    padding: 10px;
+  }
+  
+  .biografia-texto,
+  .fotos {
+    width: calc(100% - 20px); /* Menos margen en móviles */
+    padding: 12px;
+    margin: 8px 0;
+  }
+  
+  .fotos img {
+    width: calc(50% - 1px); /* Ajuste más fino para móviles */
+  }
+}
+
+.fotos {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  /* Ancho máximo para desktop */
+  margin: 0 auto;
+  /* Centrar en pantallas grandes */
+}
+
+.fotos img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Versión móvil más compacta */
+@media (max-width: 768px) {
+  .fotos {
+    max-width: 90%;
+    /* Reduce el ancho total del contenedor */
+  }
+
+  /* Opción 1: Manteniendo las imágenes juntas pero más pequeñas */
+  .fotos img {
+    width: 45%;
+    /* Reduce ligeramente cada imagen */
+  }
+
+  /* Opción 2: Versión aún más compacta (recomendada) */
+  .fotos img {
+    width: 50%;
+    /* Mantiene el 50% pero del contenedor reducido (90%) */
+    transform: scale(0.9);
+    /* Escala al 90% de su tamaño */
+    margin: 0 -5%;
+    /* Compensa el espacio reducido */
+  }
+
+  /* Ajusta bordes redondeados para móvil */
+  .fotos img:first-child {
+    border-radius: 15px 0 0 15px !important;
+  }
+
+  .fotos img:last-child {
+    border-radius: 0 15px 15px 0 !important;
+  }
+}
+
+/* Para pantallas muy pequeñas (ej. smartphones pequeños) */
+@media (max-width: 480px) {
+  .fotos {
+    max-width: 95%;
+    /* Contenedor aún más estrecho */
+  }
+
+  .fotos img {
+    transform: scale(0.8);
+    /* Escala al 80% */
+    margin: 0 -10%;
+    /* Compensa el espacio reducido */
+  }
 }
 
 .pagina-nosotros .biografia img {
@@ -47,78 +173,240 @@
 
 /* Secciones */
 .pagina-nosotros .biografia {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   max-width: 1200px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.biografia-texto {
+  width: 50%;
+  text-align: justify;
+  padding-right: 30px;
+}
+
+.fotos {
+  display: flex;
+  width: 45%;
+}
+
+.fotos img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  /* Suaviza los cambios de tamaño */
+}
+
+/* Versión tablet (hasta 768px) */
+@media (max-width: 768px) {
+  .biografia {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .biografia-texto {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .fotos {
+    width: 80%;
+    /* Reduce el ancho del contenedor de fotos */
+  }
+
+  .fotos img {
+    width: 50%;
+  }
+}
+
+/* Versión móvil (hasta 480px) - Más compacta */
+@media (max-width: 480px) {
+  .biografia {
+    padding: 10px;
+  }
+
+  .fotos {
+    width: 95%;
+    /* Ocupa casi todo el ancho */
+    max-width: 300px;
+    /* Límite máximo para que no se vean muy grandes */
+  }
+
+  .fotos img {
+    transform: scale(0.95);
+    /* Reduce ligeramente el tamaño */
+    margin: 0 -2.5%;
+    /* Compensa el espacio */
+  }
+
+  /* Ajusta bordes redondeados para móvil */
+  .fotos img:first-child {
+    border-radius: 15px 0 0 15px !important;
+  }
+
+  .fotos img:last-child {
+    border-radius: 0 15px 15px 0 !important;
+  }
+}
+
+/* Para pantallas muy pequeñas (ej. 360px) */
+@media (max-width: 360px) {
+  .fotos {
+    max-width: 280px;
+  }
+
+  .fotos img {
+    transform: scale(0.9);
+    /* Reduce un poco más */
+  }
 }
 
 
+/* CONTENEDOR PRINCIPAL */
 .mision-vision {
   background-color: #F9F5F0;
-  /* Color de fondo suave */
   padding: 2rem 1rem;
-  /* Espaciado interior */
-  text-align: center;
-  /* Centra el texto */
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Previene scroll horizontal no deseado */
 }
 
+/* CONTENEDOR DE TARJETAS - SOLUCIÓN DEFINITIVA */
 .mision-vision-contenedor {
   display: flex;
-  justify-content: space-around;
-  /* Espacia las secciones de misión y visión */
+  flex-direction: row; /* Explícitamente horizontal */
+  flex-wrap: nowrap; /* Obliga a permanecer en línea */
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
   max-width: 1200px;
-  /* Ancho máximo */
   margin: 0 auto;
-  /* Centra el contenedor */
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-.mision,
-.vision {
+/* TARJETAS - ESTILOS BASE */
+.mision, .vision {
   background-color: white;
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 35%;
+  flex: 1; /* Ocupan espacio disponible */
+  min-width: 300px; /* Ancho mínimo absoluto */
+  max-width: 400px; /* Ancho máximo */
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 
-.icono-mision,
-.icono-vision {
+/* ELEMENTOS INTERNOS */
+.icono-mision, .icono-vision {
   width: 60px;
-  /* Tamaño del ícono */
   height: auto;
-  /* Mantiene la proporción */
   margin: 0 auto 1rem;
-  /* Centra el ícono y espacio debajo */
 }
 
-h2 {
+.mision h2, .vision h2 {
+  color: #2c3e50;
   margin-bottom: 1rem;
-  /* Espacio debajo del título */
   text-align: center;
-  /* Centra el título */
+  font-size: 1.3rem;
 }
 
-p {
-  line-height: 1.6;
-  /* Altura de línea para mejor legibilidad */
+.mision p, .vision p {
   color: #333;
-  /* Color del texto */
   text-align: justify;
-  /* Justifica el texto */
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
-.hovered {
-  transform: scale(1.05);
-  /* Aumenta el tamaño del contenedor */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  /* Aumenta la sombra */
+/* MEDIA QUERIES PARA RESPONSIVIDAD */
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+  .mision-vision-contenedor {
+    gap: 15px;
+    padding: 10px 5px;
+  }
+  
+  .mision, .vision {
+    min-width: 250px;
+    padding: 1.2rem;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+  }
+  
+  p {
+    font-size: 0.85rem;
+  }
+  
+  .icono-mision, .icono-vision {
+    width: 50px;
+  }
 }
+
+/* Móvil (480px) */
+@media (max-width: 480px) {
+  .mision-vision {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .mision-vision-contenedor {
+    gap: 10px;
+    justify-content: flex-start; /* Para scroll horizontal */
+    overflow-x: auto; /* Permite scroll si es necesario */
+    scroll-snap-type: x mandatory;
+    padding-bottom: 15px; /* Espacio para sombra */
+  }
+  
+  .mision, .vision {
+    min-width: 220px;
+    padding: 1rem;
+    scroll-snap-align: start;
+  }
+  
+  h2 {
+    font-size: 1.1rem;
+  }
+  
+  p {
+    font-size: 0.8rem;
+  }
+  
+  .icono-mision, .icono-vision {
+    width: 40px;
+  }
+  
+  /* Oculta scrollbar */
+  .mision-vision-contenedor::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Móvil pequeño (360px) */
+@media (max-width: 360px) {
+  .mision, .vision {
+    min-width: 200px;
+    padding: 0.8rem;
+  }
+  
+  h2 {
+    font-size: 1rem;
+  }
+  
+  p {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+}
+
 
 
 
