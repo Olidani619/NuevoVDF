@@ -149,6 +149,21 @@ section {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Header transparente al inicio */
 .main-header {
     position: fixed;
@@ -2636,4 +2651,7 @@ section {
   .main-header.scrolled {
     padding: 45px 0;
   }
+
+
+ 
 }
